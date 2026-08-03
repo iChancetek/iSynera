@@ -16,6 +16,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import { transcribeAudio } from '@/ai/flows/whisper-stt-flow';
+import { textToSpeech } from '@/ai/flows/openai-tts-flow';
+
 interface Post {
   id: string;
   userId: string;
@@ -39,46 +42,72 @@ export default function SocialWidget({ topicId }: SocialWidgetProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [editingPostId, setEditingPostId] = useState<string | null>(null);
   const [editContent, setEditContent] = useState('');
+  
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
 
-  // Fallback to browser SpeechRecognition if no Whisper endpoint
-  const handleSTT = () => {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-      alert("Speech recognition is not supported in this browser.");
+  // Speech-to-Text using OpenAI Whisper
+  const handleSTT = async () => {
+    if (isRecording) {
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+        setIsRecording(false);
+      }
       return;
     }
-    
-    setIsRecording(true);
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      if (editingPostId) {
-        setEditContent((prev) => prev + " " + transcript);
-      } else {
-        setNewPostContent((prev) => prev + " " + transcript);
-      }
-      setIsRecording(false);
-    };
-    
-    recognition.onerror = () => {
-      setIsRecording(false);
-    };
-    
-    recognition.onend = () => {
-      setIsRecording(false);
-    };
 
-    recognition.start();
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        const formData = new FormData();
+        formData.append('audio', new File([audioBlob], 'dictation.webm', { type: 'audio/webm' }));
+
+        try {
+          const transcript = await transcribeAudio(formData);
+          if (transcript) {
+            if (editingPostId) {
+              setEditContent((prev) => (prev ? prev + ' ' + transcript : transcript));
+            } else {
+              setNewPostContent((prev) => (prev ? prev + ' ' + transcript : transcript));
+            }
+          }
+        } catch (err) {
+          console.error('Whisper STT dictation failed:', err);
+        }
+
+        stream.getTracks().forEach((track) => track.stop());
+      };
+
+      mediaRecorder.start();
+      setIsRecording(true);
+    } catch (err) {
+      console.error('Error starting dictation recording:', err);
+      setIsRecording(false);
+    }
   };
 
-  const handleTTS = (text: string) => {
-    if (!('speechSynthesis' in window)) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    // Simple voice selection could go here
-    window.speechSynthesis.speak(utterance);
+  // Text-to-Speech using OpenAI TTS
+  const handleTTS = async (text: string) => {
+    try {
+      const response = await textToSpeech({ text });
+      if (response.media) {
+        const audio = new Audio(response.media);
+        audio.play();
+      }
+    } catch (err) {
+      console.error('OpenAI TTS error:', err);
+    }
   };
 
   const handleCreatePost = () => {

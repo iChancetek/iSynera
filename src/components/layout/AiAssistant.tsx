@@ -11,6 +11,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { websiteQueryRAG, type WebsiteQueryRAGInput, type WebsiteQueryRAGOutput } from '@/ai/flows/website-query-rag';
 import { textToSpeech, type TextToSpeechOutput } from '@/ai/flows/openai-tts-flow';
+import { transcribeAudio } from '@/ai/flows/whisper-stt-flow';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from 'next/link';
 import { useUser } from '@/firebase';
@@ -38,9 +39,9 @@ const AiAssistant = () => {
   
   const { user } = useUser();
 
-
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const recognitionRef = useRef<any>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const stopAudio = () => {
@@ -74,31 +75,13 @@ const AiAssistant = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window)) {
-      const recognition = new (window as any).webkitSpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = 'en-US';
-
-      recognition.onstart = () => setIsListening(true);
-      recognition.onend = () => setIsListening(false);
-      recognition.onerror = (event: any) => {
-        console.error('Speech recognition error:', event.error);
-        setIsListening(false);
-      };
-      recognition.onresult = (event: any) => {
-        const transcript = event.results[0][0].transcript;
-        setInput(transcript);
-        handleSendMessage(undefined, transcript);
-      };
-
-      recognitionRef.current = recognition;
-    }
-    
-    // Cleanup audio on component unmount
+    // Cleanup audio and recording streams on unmount
     return () => {
-        stopAudio();
-    }
+      stopAudio();
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+      }
+    };
   }, []);
 
   const handleSendMessage = async (e?: React.FormEvent<HTMLFormElement>, textInput?: string) => {
@@ -180,11 +163,60 @@ const AiAssistant = () => {
     }
   }, [isOpen]);
   
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        const formData = new FormData();
+        formData.append('audio', new File([audioBlob], 'speech.webm', { type: 'audio/webm' }));
+
+        setIsSending(true);
+        try {
+          const transcribedText = await transcribeAudio(formData);
+          if (transcribedText) {
+            setInput(transcribedText);
+            handleSendMessage(undefined, transcribedText);
+          }
+        } catch (err) {
+          console.error('Whisper STT failed:', err);
+        } finally {
+          setIsSending(false);
+        }
+
+        stream.getTracks().forEach((track) => track.stop());
+      };
+
+      mediaRecorder.start();
+      setIsListening(true);
+    } catch (err) {
+      console.error('Error starting audio recording:', err);
+      setIsListening(false);
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      mediaRecorderRef.current.stop();
+      setIsListening(false);
+    }
+  };
+
   const toggleListening = () => {
     if (isListening) {
-      recognitionRef.current?.stop();
+      stopRecording();
     } else {
-      recognitionRef.current?.start();
+      startRecording();
     }
   };
   
@@ -280,7 +312,7 @@ const AiAssistant = () => {
                {isListening && (
                 <div className="flex items-center space-x-2 justify-center text-primary">
                   <Mic className="h-5 w-5 animate-pulse" />
-                  <p>Listening...</p>
+                  <p>Listening (OpenAI Whisper)...</p>
                 </div>
               )}
             </div>
@@ -311,7 +343,7 @@ const AiAssistant = () => {
                  )}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                     <Button type="button" size="icon" variant={isListening ? "destructive" : "outline"} onClick={toggleListening} disabled={!recognitionRef.current || isSending} aria-label="Use microphone">
+                     <Button type="button" size="icon" variant={isListening ? "destructive" : "outline"} onClick={toggleListening} disabled={isSending} aria-label="Use microphone">
                        {isListening ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
                      </Button>
                   </TooltipTrigger>
