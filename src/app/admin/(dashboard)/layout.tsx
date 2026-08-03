@@ -24,8 +24,8 @@ export default function AdminDashboardLayout({ children }: { children: ReactNode
     }
 
     user.getIdTokenResult().then((idTokenResult) => {
-      // Enforce that only chancellor@ChanceTEK.com can be admin
-      if (idTokenResult.claims.admin && user.email === 'chancellor@ChanceTEK.com') {
+      // Enforce that only chancellor@iSynera.com can be admin
+      if (idTokenResult.claims.admin && user.email === 'chancellor@iSynera.com') {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);

@@ -31,7 +31,7 @@ export default function HomePage() {
       <Section className="text-center">
         <PageHeader
           title="Ready to Transform Your Business with AI?"
-          description="Let's discuss how ChanceTEK can tailor AI solutions to meet your unique challenges and goals."
+          description="Let's discuss how iSynera can tailor AI solutions to meet your unique challenges and goals."
         />
         <Button size="lg" asChild className="shadow-lg hover:shadow-primary/30 transition-shadow">
           <Link href="/get-started">

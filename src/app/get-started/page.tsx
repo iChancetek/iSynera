@@ -8,18 +8,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Get Started',
-  description: 'Begin your AI transformation journey with ChanceTEK. Schedule a free consultation and let us design a custom AI solution tailored to your business.',
-  alternates: { canonical: 'https://www.ChanceTEK.com/get-started' },
+  description: 'Begin your AI transformation journey with iSynera. Schedule a free consultation and let us design a custom AI solution tailored to your business.',
+  alternates: { canonical: 'https://www.iSynera.com/get-started' },
   openGraph: {
-    title: 'Get Started | ChanceTEK',
-    description: 'Begin your AI transformation journey with ChanceTEK. Schedule a free consultation and let us build your custom AI solution.',
-    url: 'https://www.ChanceTEK.com/get-started',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Get Started with ChanceTEK' }],
+    title: 'Get Started | iSynera',
+    description: 'Begin your AI transformation journey with iSynera. Schedule a free consultation and let us build your custom AI solution.',
+    url: 'https://www.iSynera.com/get-started',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Get Started with iSynera' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Get Started | ChanceTEK',
-    description: 'Begin your AI transformation. Schedule a free consultation with ChanceTEK.',
+    title: 'Get Started | iSynera',
+    description: 'Begin your AI transformation. Schedule a free consultation with iSynera.',
     images: ['/og-image.png'],
   },
 };
@@ -57,9 +57,9 @@ export default function GetStartedPage() {
 
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
         <div className="space-y-6">
-          <h2 className="text-3xl font-semibold text-foreground">Partner with ChanceTEK</h2>
+          <h2 className="text-3xl font-semibold text-foreground">Partner with iSynera</h2>
           <p className="text-muted-foreground leading-relaxed">
-            At ChanceTEK, we simplify the process of integrating advanced AI into your operations. 
+            At iSynera, we simplify the process of integrating advanced AI into your operations. 
             Whether you're looking to automate workflows, enhance customer experiences, or unlock new data insights, 
             our team is ready to guide you every step of the way.
           </p>

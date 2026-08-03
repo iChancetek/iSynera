@@ -125,13 +125,13 @@ export default function AboutPage() {
         />
         <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed text-center">
           <p>
-            ChanceTEK is a trusted AI partner delivering AI-Native, Agentic AI applications and platforms that transform business operations, amplify productivity, and elevate strategic decision-making. Our solutions are designed to reason, adapt, and execute—bringing intelligence to every layer of the enterprise and turning data into action.
+            iSynera is a trusted AI partner delivering AI-Native, Agentic AI applications and platforms that transform business operations, amplify productivity, and elevate strategic decision-making. Our solutions are designed to reason, adapt, and execute—bringing intelligence to every layer of the enterprise and turning data into action.
           </p>
           <p>
-            As part of ChanceTEK LLC, a technology pioneer with over 25 years of innovation, we combine deep enterprise expertise with cutting-edge AI technologies—including Multimodal Intelligence, Large Reasoning Models (LRMs), Large Language Models (LLMs), and Small Language Models (SLMs). Leveraging RAG-driven architectures, precision fine-tuning, advanced Context Engineering, and next-generation Vibe Coding, we deliver AI that is highly accurate, context-aware, and optimized for real-world impact.
+            As part of iSynera LLC, a technology pioneer with over 25 years of innovation, we combine deep enterprise expertise with cutting-edge AI technologies—including Multimodal Intelligence, Large Reasoning Models (LRMs), Large Language Models (LLMs), and Small Language Models (SLMs). Leveraging RAG-driven architectures, precision fine-tuning, advanced Context Engineering, and next-generation Vibe Coding, we deliver AI that is highly accurate, context-aware, and optimized for real-world impact.
           </p>
           <p>
-            Founded by Chancellor Minus, ChanceTEK is committed to making AI practical, powerful, and seamlessly integrated into modern workflows—turning intelligent systems into trusted digital coworkers that actively drive results.
+            Founded by Chancellor Minus, iSynera is committed to making AI practical, powerful, and seamlessly integrated into modern workflows—turning intelligent systems into trusted digital coworkers that actively drive results.
           </p>
           <p>
             Headquartered in New York City, we partner with forward-thinking organizations to deploy secure, scalable AI applications and platforms—designed not just for today, but built for the future of enterprise intelligence.
@@ -202,7 +202,7 @@ export default function AboutPage() {
             className="mt-16 p-8 md:p-12 bg-primary text-primary-foreground rounded-3xl text-center shadow-2xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">The ChanceTEK Standard</h3>
+            <h3 className="text-2xl md:text-4xl font-bold mb-4">The iSynera Standard</h3>
             <p className="text-lg md:text-xl font-medium opacity-90 max-w-2xl mx-auto">
               We don’t follow trends—we define standards. No AI washing. No slop. No noise. Just intelligent systems built to perform.
             </p>
@@ -226,12 +226,12 @@ export default function AboutPage() {
         <PageHeader title="Propelled by a Brilliant Engine of Innovation" />
         <div className="max-w-3xl mx-auto text-center space-y-10">
           <p className="text-muted-foreground leading-relaxed">
-            Backed by the deep technology heritage of ChanceTEK LLC, ChanceTEK combines over two decades of enterprise success with a modern vision of AI. Our goal: to deliver practical, powerful AI solutions that make businesses faster, smarter, and more resilient.
+            Backed by the deep technology heritage of iSynera LLC, iSynera combines over two decades of enterprise success with a modern vision of AI. Our goal: to deliver practical, powerful AI solutions that make businesses faster, smarter, and more resilient.
           </p>
           
           <div className="max-w-2xl mx-auto p-8 bg-primary/5 border border-primary/10 rounded-2xl shadow-sm">
             <p className="text-primary font-medium text-lg leading-relaxed italic">
-              "ChanceTEK develops all of its applications and platforms using Progressive Web App (PWA) technology, delivering reliable performance, cross-device accessibility, and a seamless, app-like user experience."
+              "iSynera develops all of its applications and platforms using Progressive Web App (PWA) technology, delivering reliable performance, cross-device accessibility, and a seamless, app-like user experience."
             </p>
           </div>
         </div>
@@ -327,7 +327,7 @@ export default function AboutPage() {
         <PageHeader title="LLM Expertise" description="Leading Proprietary Frontier and Open-Weight Models" />
         <div className="max-w-4xl mx-auto space-y-8">
           <p className="text-muted-foreground leading-relaxed text-center">
-            ChanceTEK specializes in leveraging the world's most advanced large language models (LLMs). We maintain deep expertise across both proprietary frontier systems and high-performance open-weight models to ensure every solution is built on the optimal engine for its specific requirements.
+            iSynera specializes in leveraging the world's most advanced large language models (LLMs). We maintain deep expertise across both proprietary frontier systems and high-performance open-weight models to ensure every solution is built on the optimal engine for its specific requirements.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -389,7 +389,7 @@ export default function AboutPage() {
           </div>
 
           <p className="text-muted-foreground leading-relaxed text-center pt-4 border-t">
-            By combining proprietary and open-source technologies, ChanceTEK delivers tailored LLM solutions—from secure enterprise chatbots to fine-tuned domain-specific models—empowering businesses with state-of-the-art natural language processing.
+            By combining proprietary and open-source technologies, iSynera delivers tailored LLM solutions—from secure enterprise chatbots to fine-tuned domain-specific models—empowering businesses with state-of-the-art natural language processing.
           </p>
         </div>
       </Section>
@@ -421,10 +421,10 @@ export default function AboutPage() {
       </Section>
 
       <Section>
-        <PageHeader title="Why Choose ChanceTEK?" />
+        <PageHeader title="Why Choose iSynera?" />
         <div className="max-w-2xl mx-auto space-y-3">
           {[
-            "25+ Years of Proven Enterprise Technology (via ChanceTEK LLC)",
+            "25+ Years of Proven Enterprise Technology (via iSynera LLC)",
             "Intelligent AI Solutions that Increase Productivity",
             "Scalable, Secure, and Customizable Architectures",
             "Deep Integration into Your Tech Ecosystem",
@@ -441,10 +441,10 @@ export default function AboutPage() {
       <Section className="text-center">
         <h2 className="text-3xl font-semibold text-primary mb-4">Let’s Build the Future of Work—With AI</h2>
         <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-          From sales acceleration and voice engagement to autonomous decision-making and seamless workflow automation, ChanceTEK delivers intelligent AI solutions that work—so you can work smarter.
+          From sales acceleration and voice engagement to autonomous decision-making and seamless workflow automation, iSynera delivers intelligent AI solutions that work—so you can work smarter.
         </p>
         <p className="text-2xl font-bold text-foreground">
-          ChanceTEK — Where Applied AI Meets Real-World Results.
+          iSynera — Where Applied AI Meets Real-World Results.
         </p>
       </Section>
     </>

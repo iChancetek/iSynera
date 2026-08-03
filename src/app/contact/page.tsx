@@ -7,18 +7,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Reach out to ChanceTEK for inquiries about our AI solutions, partnership opportunities, or to schedule a consultation. Headquartered in New York City.',
-  alternates: { canonical: 'https://www.ChanceTEK.com/contact' },
+  description: 'Reach out to iSynera for inquiries about our AI solutions, partnership opportunities, or to schedule a consultation. Headquartered in New York City.',
+  alternates: { canonical: 'https://www.iSynera.com/contact' },
   openGraph: {
-    title: 'Contact Us | ChanceTEK',
-    description: 'Get in touch with ChanceTEK — your AI & media solutions partner. Schedule a consultation or ask about our enterprise AI services.',
-    url: 'https://www.ChanceTEK.com/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact ChanceTEK' }],
+    title: 'Contact Us | iSynera',
+    description: 'Get in touch with iSynera — your AI & media solutions partner. Schedule a consultation or ask about our enterprise AI services.',
+    url: 'https://www.iSynera.com/contact',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact iSynera' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | ChanceTEK',
-    description: 'Get in touch with ChanceTEK — your AI & media solutions partner.',
+    title: 'Contact Us | iSynera',
+    description: 'Get in touch with iSynera — your AI & media solutions partner.',
     images: ['/og-image.png'],
   },
 };

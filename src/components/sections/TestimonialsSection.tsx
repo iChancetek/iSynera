@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
     <Section className="bg-muted/30">
       <PageHeader 
         title="What Our Clients Say"
-        description="Real stories from businesses empowered by ChanceTEK's AI expertise."
+        description="Real stories from businesses empowered by iSynera's AI expertise."
       />
       <div className="max-w-7xl mx-auto px-10">
         <AiAgentsCarousel>

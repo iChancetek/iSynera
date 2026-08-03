@@ -30,20 +30,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ChanceTEK.com'),
+  metadataBase: new URL('https://www.iSynera.com'),
   title: {
-    default: 'ChanceTEK | Your AI & Media Solutions Partner for the Agentic Future',
-    template: '%s | ChanceTEK',
+    default: 'iSynera | Your AI & Media Solutions Partner for the Agentic Future',
+    template: '%s | iSynera',
   },
-  description: 'ChanceTEK builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
+  description: 'iSynera builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
   keywords: [
     'AI Solutions', 'Agentic AI', 'Generative AI', 'LLM Fine-Tuning',
-    'Workflow Automation', 'ChanceTEK', 'Enterprise AI', 'AI Agents',
+    'Workflow Automation', 'iSynera', 'Enterprise AI', 'AI Agents',
     'RAG Chatbots', 'Voice AI', 'AI-Powered Web Apps',
   ],
-  authors: [{ name: 'ChanceTEK', url: 'https://www.ChanceTEK.com' }],
-  creator: 'ChanceTEK',
-  publisher: 'ChanceTEK',
+  authors: [{ name: 'iSynera', url: 'https://www.iSynera.com' }],
+  creator: 'iSynera',
+  publisher: 'iSynera',
   category: 'technology',
   robots: {
     index: true,
@@ -56,12 +56,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.ChanceTEK.com',
+    canonical: 'https://www.iSynera.com',
   },
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    title: 'ChanceTEK',
+    title: 'iSynera',
     statusBarStyle: 'black-translucent',
   },
   formatDetection: {
@@ -77,31 +77,31 @@ export const metadata: Metadata = {
     shortcut: '/pwa-icon.jpg',
   },
   openGraph: {
-    title: 'ChanceTEK | Your AI & Media Solutions Partner for the Agentic Future',
-    description: 'ChanceTEK builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
+    title: 'iSynera | Your AI & Media Solutions Partner for the Agentic Future',
+    description: 'iSynera builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.ChanceTEK.com',
-    siteName: 'ChanceTEK',
+    url: 'https://www.iSynera.com',
+    siteName: 'iSynera',
     images: [{
-      url: 'https://www.ChanceTEK.com/attached-hero-image.jpg',
+      url: 'https://www.iSynera.com/attached-hero-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'ChanceTEK — Your AI & Media Solutions Partner for the Agentic Future',
+      alt: 'iSynera — Your AI & Media Solutions Partner for the Agentic Future',
       type: 'image/jpeg',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@ChanceTEK',
-    creator: '@ChanceTEK',
-    title: 'ChanceTEK | Your AI & Media Solutions Partner for the Agentic Future',
-    description: 'ChanceTEK builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
+    site: '@iSynera',
+    creator: '@iSynera',
+    title: 'iSynera | Your AI & Media Solutions Partner for the Agentic Future',
+    description: 'iSynera builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
     images: [{
-      url: 'https://www.ChanceTEK.com/attached-hero-image.jpg',
+      url: 'https://www.iSynera.com/attached-hero-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'ChanceTEK — Your AI & Media Solutions Partner for the Agentic Future',
+      alt: 'iSynera — Your AI & Media Solutions Partner for the Agentic Future',
     }],
   },
 };
@@ -109,11 +109,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'ChanceTEK',
-  url: 'https://www.ChanceTEK.com',
-  logo: 'https://www.ChanceTEK.com/pwa-512.png',
-  image: 'https://www.ChanceTEK.com/attached-hero-image.jpg',
-  description: 'ChanceTEK builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
+  name: 'iSynera',
+  url: 'https://www.iSynera.com',
+  logo: 'https://www.iSynera.com/pwa-512.png',
+  image: 'https://www.iSynera.com/attached-hero-image.jpg',
+  description: 'iSynera builds next-generation AI-native enterprise platforms designed to think, act, and evolve alongside your business. Native AI. Agentic AI. AI-Enabled.',
   foundingDate: '2025',
   founder: {
     '@type': 'Person',
@@ -131,12 +131,12 @@ const jsonLd = {
     '@type': 'ContactPoint',
     telephone: '+1-646-867-3318',
     contactType: 'customer service',
-    email: 'info@ChanceTEK.com',
+    email: 'info@iSynera.com',
     areaServed: 'US',
     availableLanguage: 'English',
   },
   sameAs: [
-    'https://www.ChanceTEK.com',
+    'https://www.iSynera.com',
   ],
 };
 
@@ -154,7 +154,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="ChanceTEK" />
+        <meta name="apple-mobile-web-app-title" content="iSynera" />
         {/* JSON-LD Organization structured data for Google rich results */}
         <script
           type="application/ld+json"

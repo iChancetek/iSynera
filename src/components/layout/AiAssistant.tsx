@@ -166,7 +166,7 @@ const AiAssistant = () => {
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
-        const greeting = "Hello! I'm the ChanceTEK assistant. You can ask me questions about our services, technology, or where to find information on the site.";
+        const greeting = "Hello! I'm the iSynera assistant. You can ask me questions about our services, technology, or where to find information on the site.";
         const initialMessage: Message = {
           id: 'initial-greeting',
           text: greeting,
@@ -232,7 +232,7 @@ const AiAssistant = () => {
             </Button>
           </TooltipTrigger>
           <TooltipContent side="left" className="bg-primary text-primary-foreground">
-            <p>Chat with ChanceTEK AI</p>
+            <p>Chat with iSynera AI</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -241,7 +241,7 @@ const AiAssistant = () => {
         <SheetContent side="right" className="w-full max-w-md p-0 flex flex-col" aria-describedby={undefined}>
           <SheetHeader className="p-4 border-b">
             <div className="flex justify-between items-center">
-              <SheetTitle className="text-lg font-semibold">ChanceTEK AI Assistant</SheetTitle>
+              <SheetTitle className="text-lg font-semibold">iSynera AI Assistant</SheetTitle>
               <SheetClose asChild>
                 <Button variant="ghost" size="icon">
                   <X className="h-5 w-5" />
@@ -289,7 +289,7 @@ const AiAssistant = () => {
             <div className="flex items-center space-x-2">
               <Input
                 type="text"
-                placeholder={isListening ? "Listening..." : "Ask about ChanceTEK..."}
+                placeholder={isListening ? "Listening..." : "Ask about iSynera..."}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-grow"

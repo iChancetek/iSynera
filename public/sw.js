@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ichancetek-v2';
+const CACHE_NAME = 'iisynera-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json',

@@ -125,7 +125,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
                 style={{ perspective: '1200px' }}
               >
                 {/* 
-                  ChanceTEK
+                  iSynera
                   ai-glow-text  : ambient breathe 4s (cool spectrum)
                   ai-light-sweep: data flow shimmer 8s + 3D depth shadows
                   rotateX/Y     : subtle cursor parity (≤0.5deg)

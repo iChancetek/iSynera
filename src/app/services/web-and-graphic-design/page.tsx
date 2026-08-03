@@ -110,7 +110,7 @@ export default function WebAndGraphicDesignPage() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
           >
             <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary),0.4)] transition-all hover:scale-105" asChild>
-              <Link href="/contact">Build With ChanceTEK</Link>
+              <Link href="/contact">Build With iSynera</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-primary/20 hover:bg-primary/10 backdrop-blur-sm transition-all hover:scale-105" asChild>
               <Link href="#capabilities">Explore AI Capabilities</Link>
@@ -158,23 +158,23 @@ export default function WebAndGraphicDesignPage() {
         <div className="max-w-7xl mx-auto mt-16 px-6">
           <AiAgentsCarousel>
             {[
-              { src: "/attached-hero-image.jpg", title: "ChanceTEK Hero", type: "image" },
+              { src: "/attached-hero-image.jpg", title: "iSynera Hero", type: "image" },
               { src: "/AgenticChance.mp4", title: "Agentic AI Concepts", type: "video" },
-              { src: "/chancetek_1.mp4", title: "ChanceTEK Cinematic 1", type: "video" },
-              { src: "/chancetek11.mp4", title: "ChanceTEK Cinematic 11", type: "video" },
+              { src: "/isynera_1.mp4", title: "iSynera Cinematic 1", type: "video" },
+              { src: "/isynera11.mp4", title: "iSynera Cinematic 11", type: "video" },
               { src: "/workspaceiq_1.mp4", title: "WorkSpaceIQ Overview", type: "video" },
               { src: "/workspaceiq.mp4", title: "WorkSpaceIQ Platform", type: "video" },
               { src: "/WorkSpaceIQ1.mp4", title: "WorkSpaceIQ Features", type: "video" },
               { src: "/Chancellor_CRM_ERP2.mp4", title: "Chancellor CRM ERP", type: "video" },
               { src: "/ChancellorOS.mp4", title: "ChancellorOS", type: "video" },
-              { src: "/Chancetek5.mp4", title: "ChanceTEK Intelligence", type: "video" },
+              { src: "/iSynera5.mp4", title: "iSynera Intelligence", type: "video" },
               { src: "/Dogs_and_cats_202603250528.mp4", title: "The PotLuxe Media 1", type: "video" },
               { src: "/Dogs_and_cats_202603250530.mp4", title: "The PotLuxe Media 2", type: "video" },
               { src: "/iCareos1.mp4", title: "iCareOS Overview", type: "video" },
               { src: "/iSkylar.MP4", title: "iSkylar Ecosystem", type: "video" },
               { src: "/StrideIQ.mp4", title: "StrideIQ Platform", type: "video" },
               { src: "/iCareOS.mp4", title: "iCareOS Deep Dive", type: "video" },
-              { src: "/Chancetek_3.mp4", title: "ChanceTEK Cinematic 3", type: "video" },
+              { src: "/iSynera_3.mp4", title: "iSynera Cinematic 3", type: "video" },
               { src: "/elitebooks1.mp4", title: "EliteBooks Showcase", type: "video" },
               { src: "/iSydney.mp4", title: "iSydney Concept", type: "video" },
               { src: "/modeliq5.mp4", title: "ModelIQ Platform", type: "video" },
@@ -193,10 +193,10 @@ export default function WebAndGraphicDesignPage() {
               { src: "/famio_symbol.png", title: "Famio Symbol", type: "image" },
               { src: "/Famio Agentic AI Social Media Platform.mp4", title: "Famio Agentic AI Platform", type: "video" },
               { src: "/Metabolic Backdoor.mp4", title: "Metabolic Backdoor", type: "video" },
-              { src: "/ChanceTEK21.mp4", title: "ChanceTEK 21", type: "video" },
-              { src: "/ChanceTEK221.mp4", title: "ChanceTEK 221", type: "video" },
-              { src: "/ChanceTEK0221.mp4", title: "ChanceTEK 0221", type: "video" },
-              { src: "/ChanceTEK22221.mp4", title: "ChanceTEK 22221", type: "video" },
+              { src: "/iSynera21.mp4", title: "iSynera 21", type: "video" },
+              { src: "/iSynera221.mp4", title: "iSynera 221", type: "video" },
+              { src: "/iSynera0221.mp4", title: "iSynera 0221", type: "video" },
+              { src: "/iSynera22221.mp4", title: "iSynera 22221", type: "video" },
               { src: "/57th_Annual_Old_Timers_Reunion_202607161457.mp4", title: "57th Annual Old Timers Reunion", type: "video" },
               { src: "/iHailey.mp4", title: "iHailey", type: "video" },
               { src: "/famio221.mp4", title: "Famio 221", type: "video" },
@@ -380,7 +380,7 @@ export default function WebAndGraphicDesignPage() {
 
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-foreground font-medium">CyneMora</strong>, developed by ChanceTEK LLC, is an AI-native text-to-video cinematic platform that transforms ideas into fully produced, studio-quality videos in minutes.
+                <strong className="text-foreground font-medium">CyneMora</strong>, developed by iSynera LLC, is an AI-native text-to-video cinematic platform that transforms ideas into fully produced, studio-quality videos in minutes.
               </p>
               <p>
                 Turn scripts, images, presentations, and PDFs into polished visual content instantly—without cameras, crews, or editing experience. From marketing and training videos to cinematic storytelling and long-form content, CyneMora makes professional video creation simple, fast, and scalable.
@@ -490,7 +490,7 @@ export default function WebAndGraphicDesignPage() {
       <Section id="workflow" className="relative z-10 py-24 bg-black/40 border-y border-border/10 backdrop-blur-xl">
         <PageHeader
           title="AI Creative Workflow Ecosystem"
-          description="How ChanceTEK orchestrates intelligent systems like AntiGravity, CyneMora, and HeyGen throughout the creative lifecycle."
+          description="How iSynera orchestrates intelligent systems like AntiGravity, CyneMora, and HeyGen throughout the creative lifecycle."
         />
 
         <motion.div
@@ -634,7 +634,7 @@ export default function WebAndGraphicDesignPage() {
               role: "CTO, TechVision Solutions"
             },
             {
-              quote: "ChanceTEK's motion graphics and AI avatars completely transformed our marketing. The cinematic quality they produced is simply unmatched in the industry.",
+              quote: "iSynera's motion graphics and AI avatars completely transformed our marketing. The cinematic quality they produced is simply unmatched in the industry.",
               name: "David Chen",
               role: "VP Marketing, NexaScale"
             },
@@ -690,7 +690,7 @@ export default function WebAndGraphicDesignPage() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground mb-10"
           >
-            The future of intelligent design is here. Partner with ChanceTEK to engineer breathtaking digital experiences that scale.
+            The future of intelligent design is here. Partner with iSynera to engineer breathtaking digital experiences that scale.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

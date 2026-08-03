@@ -35,10 +35,10 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return {
-    title: `${service.name} - ChanceTEK AI Services`,
+    title: `${service.name} - iSynera AI Services`,
     description: service.description, // Use short description for meta
     openGraph: {
-        title: `${service.name} - ChanceTEK AI Services`,
+        title: `${service.name} - iSynera AI Services`,
         description: service.description,
         type: 'article',
         // Add other OG tags if needed, e.g., images related to the service

@@ -44,7 +44,7 @@ export const services: Service[] = [
     name: 'Agentic AI',
     description: 'Empowering autonomous, goal-driven AI systems capable of reasoning, planning, and taking intelligent actions with minimal human input. Agentic AI enhances workflow automation, decision-making, and adaptive problem-solving across healthcare and enterprise environments.',
     detailedDescription: [
-      "ChanceTEK's Agentic AI service delivers autonomous, goal-driven AI agents capable of complex reasoning, planning, and executing multi-step tasks across various digital systems. These agents are designed to operate with minimal human oversight, proactively working towards predefined objectives by interacting with their environment and making decisions.",
+      "iSynera's Agentic AI service delivers autonomous, goal-driven AI agents capable of complex reasoning, planning, and executing multi-step tasks across various digital systems. These agents are designed to operate with minimal human oversight, proactively working towards predefined objectives by interacting with their environment and making decisions.",
       "Our Agentic AI solutions are built using advanced AI frameworks that enable agents to perceive their environment, maintain a state, reason about actions, and learn from outcomes. They can be equipped with tools to interact with APIs, databases, web services, and other software, allowing them to perform a wide range of digital tasks. The architecture supports long-running tasks and complex workflow orchestration.",
       "Applications of Agentic AI are transformative, ranging from automating complex business processes like supply chain optimization or personalized marketing campaign management, to creating sophisticated digital workers that can perform data analysis, report generation, or even software testing. They are ideal for scenarios requiring adaptability, learning, and autonomous problem-solving.",
       "Deploying Agentic AI allows businesses to achieve unprecedented levels of automation and efficiency in complex operational areas. These agents can significantly reduce manual effort, accelerate task completion, and unlock new capabilities by handling tasks previously too complex for traditional automation. This leads to cost savings, improved accuracy, and the ability to scale operations rapidly."
@@ -83,7 +83,7 @@ export const services: Service[] = [
     name: 'RAG Chatbots & AI Assistants',
     description: 'AI chatbots and task-specific assistants that combine natural conversation with real-time data retrieval from trusted knowledge sources. RAG technology ensures responses are accurate, context-aware, and grounded in up-to-date information, ideal for clinical support, documentation, and patient engagement.',
     detailedDescription: [
-      "ChanceTEK's RAG Chatbots and AI Assistants offer a powerful conversational AI solution that leverages Retrieval-Augmented Generation to provide highly relevant and accurate answers sourced directly from your organization's proprietary data. These agents engage users in natural, context-aware conversations, making information access intuitive and efficient.",
+      "iSynera's RAG Chatbots and AI Assistants offer a powerful conversational AI solution that leverages Retrieval-Augmented Generation to provide highly relevant and accurate answers sourced directly from your organization's proprietary data. These agents engage users in natural, context-aware conversations, making information access intuitive and efficient.",
       "These systems are built upon a robust RAG framework, which connects large language models to your internal documents, databases, and knowledge bases. When a user asks a question, the chatbot retrieves pertinent information from your data and uses it to formulate a precise answer. This process ensures responses are factual, up-to-date, and specific to your business context, significantly outperforming generic chatbots.",
       "RAG Chatbots & AI Assistants are ideal for customer support, allowing customers to get instant answers to their queries 24/7. Internally, they can serve as employee assistants, helping staff quickly find information on company policies, procedures, or technical documentation. They can also be used for interactive product guides or onboarding new clients by answering their specific questions.",
       "The deployment of RAG Chatbots and task-specific assistants results in enhanced customer and employee satisfaction through quick and accurate information retrieval. It has reduced the workload on human support staff, allowing them to focus on more complex issues. Furthermore, by grounding responses in your own data, these chatbots provide a trustworthy and secure way to leverage AI for communication."
@@ -99,7 +99,7 @@ export const services: Service[] = [
       "Our LLM Fine-Tuning service empowers businesses to create highly specialized AI models by adapting pre-trained large language models (LLMs) to their specific domain, data, and terminology. This process enhances the relevance, accuracy, and performance of LLMs for particular tasks, resulting in truly custom-tailored AI experiences.",
       "The fine-tuning process involves taking a foundational LLM and further training it on a curated dataset provided by your organization. This dataset could include internal documents, customer interactions, industry-specific jargon, or any text that reflects the nuances of your business. We employ various techniques, including supervised fine-tuning and instruction tuning, to align the model’s behavior with your desired outcomes while adhering to best practices for data privacy and security.",
       "LLM fine-tuning is beneficial for a wide range of applications, such as developing domain-specific chatbots that understand industry-specific language, creating custom content generators that match a company's tone and style, or building specialized data analysis tools that can interpret niche datasets. It's essential when off-the-shelf LLMs lack the required depth of knowledge or context for your use case.",
-      "By fine-tuning an LLM with ChanceTEK, you gain a competitive advantage through AI solutions that are deeply integrated with your unique business context. This leads to more accurate outputs, improved user engagement, and AI that truly understands and reflects your brand. Fine-tuning can also lead to more efficient models for specific tasks, potentially reducing operational costs compared to using larger, more general models."
+      "By fine-tuning an LLM with iSynera, you gain a competitive advantage through AI solutions that are deeply integrated with your unique business context. This leads to more accurate outputs, improved user engagement, and AI that truly understands and reflects your brand. Fine-tuning can also lead to more efficient models for specific tasks, potentially reducing operational costs compared to using larger, more general models."
     ],
     Icon: SlidersHorizontal,
     href: '/services/model-fine-tuning-service'
@@ -148,7 +148,7 @@ export const services: Service[] = [
     name: 'AI SDR Agents',
     description: 'Automate sales development: qualify leads, nurture prospects, schedule meetings.',
     detailedDescription: [
-      "ChanceTEK's AI Sales Development Representative (SDR) Agents automate and optimize the top-of-funnel sales activities. These intelligent agents are designed to identify and qualify leads, engage prospects through personalized outreach, nurture relationships over time, and seamlessly schedule meetings for your human sales team. This service aims to accelerate the sales cycle and increase the volume of qualified opportunities.",
+      "iSynera's AI Sales Development Representative (SDR) Agents automate and optimize the top-of-funnel sales activities. These intelligent agents are designed to identify and qualify leads, engage prospects through personalized outreach, nurture relationships over time, and seamlessly schedule meetings for your human sales team. This service aims to accelerate the sales cycle and increase the volume of qualified opportunities.",
       "Our AI SDR Agents utilize a combination of machine learning for lead scoring and prioritization, NLP for crafting and understanding communication across channels like email and LinkedIn, and automation engines for executing multi-touch outreach sequences. They integrate with your CRM to log activities, update contact information, and ensure a smooth handover of qualified leads to sales representatives. The system continuously learns from interaction data to refine its approach and improve conversion rates.",
       "This service is invaluable for sales teams looking to scale their outreach efforts without proportionally increasing headcount. Use cases include automated prospecting based on ideal customer profiles, personalized email follow-up campaigns, initial lead qualification via conversational AI, and booking discovery calls or product demos directly into sales reps' calendars. It's particularly effective for industries with long sales cycles or high-volume lead generation needs.",
       "The primary benefits of deploying AI SDR Agents include a significant increase in lead generation and qualification efficiency, reduced cost per lead, and a more focused human sales team that can concentrate on closing deals rather than prospecting. This leads to a more predictable sales pipeline, faster revenue growth, and improved overall sales team morale and productivity."
@@ -187,7 +187,7 @@ export const services: Service[] = [
     name: 'Generative AI',
     description: 'Powerful creative and productivity tools for content generation, ideation, code generation.',
     detailedDescription: [
-      "ChanceTEK's Generative AI services unlock powerful creative and productivity capabilities for your business. We help you leverage state-of-the-art generative models to create original content, accelerate ideation, automate design processes, and even generate production-ready code. This service is about augmenting human creativity and efficiency with AI.",
+      "iSynera's Generative AI services unlock powerful creative and productivity capabilities for your business. We help you leverage state-of-the-art generative models to create original content, accelerate ideation, automate design processes, and even generate production-ready code. This service is about augmenting human creativity and efficiency with AI.",
       "We work with a variety of generative models, including those for text, image, audio, and code generation. Our technical approach involves understanding your specific needs, selecting the appropriate models (or fine-tuning them), and integrating them into your workflows. This can range from deploying pre-built tools to developing custom generative AI applications tailored to your requirements.",
       "The use cases for Generative AI are vast and rapidly expanding. Examples include automated marketing copy and blog post creation, generating unique images and designs for campaigns, creating synthetic data for training other AI models, drafting initial versions of software code, or even composing original music snippets. It's a transformative technology for creative industries, marketing, software development, and R&D.",
       "Integrating Generative AI tools provides significant benefits such as increased content output, reduced time for creative tasks, enhanced innovation through rapid prototyping of ideas, and the ability to personalize content at scale. This empowers your teams to focus on higher-level strategy and refinement, while AI handles much of the initial generation work, leading to faster turnarounds and novel solutions."
@@ -213,7 +213,7 @@ export const services: Service[] = [
     name: 'Workflow Automation',
     description: 'Automate and orchestrate business processes to eliminate bottlenecks and boost productivity.',
     detailedDescription: [
-      "ChanceTEK's Workflow Automation service focuses on identifying, designing, and implementing AI-driven solutions to automate and orchestrate complex business processes. We help organizations streamline their operations by eliminating manual bottlenecks, reducing errors, and enhancing overall team productivity and efficiency through intelligent automation.",
+      "iSynera's Workflow Automation service focuses on identifying, designing, and implementing AI-driven solutions to automate and orchestrate complex business processes. We help organizations streamline their operations by eliminating manual bottlenecks, reducing errors, and enhancing overall team productivity and efficiency through intelligent automation.",
       "Our approach combines traditional Robotic Process Automation (RPA) techniques with AI capabilities like machine learning, natural language processing, and computer vision. This allows us to automate not only repetitive, rule-based tasks but also more complex processes that require decision-making or data interpretation. We integrate with your existing systems and applications to create seamless, end-to-end automated workflows.",
       "Workflow automation can be applied across various departments and functions, including finance (e.g., invoice processing, reconciliation), HR (e.g., employee onboarding, payroll), operations (e.g., supply chain management, inventory tracking), and IT (e.g., system monitoring, incident response). Any process that is repetitive, data-intensive, or prone to human error is a good candidate for automation.",
       "By automating workflows, businesses can achieve significant cost reductions, improve processing speed and accuracy, ensure better compliance, and free up employees to focus on more strategic, value-added activities. This leads to increased operational agility, enhanced employee satisfaction, and a stronger competitive position in the market."
@@ -503,7 +503,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 'testimonial-1',
-    quote: "ChanceTEK's AI solutions revolutionized our customer service. The RAG Chatbot provides instant, accurate answers, significantly improving satisfaction.",
+    quote: "iSynera's AI solutions revolutionized our customer service. The RAG Chatbot provides instant, accurate answers, significantly improving satisfaction.",
     name: 'Robert Green',
     title: 'CEO',
     company: 'Innovatech Ltd.',
@@ -517,7 +517,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 'testimonial-3',
-    quote: 'Automating our sales pipeline with AI SDR Agents from ChanceTEK has tripled our lead conversion rate. Highly recommended!',
+    quote: 'Automating our sales pipeline with AI SDR Agents from iSynera has tripled our lead conversion rate. Highly recommended!',
     name: 'Alice Brown',
     title: 'VP of Sales',
     company: 'Future Sales Co.',
@@ -536,13 +536,13 @@ export const partners: Partner[] = [
     id: 'tbrexa',
     name: 'tBrexa Bio Inc.',
     website: 'https://tbrexa.com',
-    summary: 'tBrexa Bio Inc. is a biotechnology company at the forefront of AI and life sciences. Through its partnership with ChanceTEK, tBrexa helps advance intelligent clinical research, medical data analysis, and healthcare innovation using AI-powered tools.',
+    summary: 'tBrexa Bio Inc. is a biotechnology company at the forefront of AI and life sciences. Through its partnership with iSynera, tBrexa helps advance intelligent clinical research, medical data analysis, and healthcare innovation using AI-powered tools.',
   },
   {
     id: 'streamliningpm',
     name: 'StreamliningPM',
     website: 'https://streamliningpm.com',
-    summary: 'StreamliningPM is a product and project management consultancy. As a strategic partner of ChanceTEK, they support the integration of AI-enhanced workflows into business operations, driving smart research and decision-making across enterprise systems.',
+    summary: 'StreamliningPM is a product and project management consultancy. As a strategic partner of iSynera, they support the integration of AI-enhanced workflows into business operations, driving smart research and decision-making across enterprise systems.',
   }
 ];
 
@@ -556,8 +556,8 @@ export interface FaqItem {
 export const faqItems: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'What industries does ChanceTEK serve?',
-    answer: 'ChanceTEK provides AI solutions across a wide range of industries, including technology, finance, healthcare, retail, and manufacturing. Our solutions are adaptable to meet the unique needs of any business.',
+    question: 'What industries does iSynera serve?',
+    answer: 'iSynera provides AI solutions across a wide range of industries, including technology, finance, healthcare, retail, and manufacturing. Our solutions are adaptable to meet the unique needs of any business.',
   },
   {
     id: 'faq-2',
@@ -571,8 +571,8 @@ export const faqItems: FaqItem[] = [
   },
   {
     id: 'faq-4',
-    question: 'How does ChanceTEK ensure data privacy and security?',
-    answer: 'Data privacy and security are paramount at ChanceTEK. We adhere to strict data protection protocols, employ encryption, and ensure our solutions comply with relevant regulations. For RAG agents, your proprietary data remains within your control.',
+    question: 'How does iSynera ensure data privacy and security?',
+    answer: 'Data privacy and security are paramount at iSynera. We adhere to strict data protection protocols, employ encryption, and ensure our solutions comply with relevant regulations. For RAG agents, your proprietary data remains within your control.',
   },
 ];
 
@@ -616,28 +616,28 @@ export const technologies: Technology[] = [
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export const companyInfo = {
-  name: 'ChanceTEK',
+  name: 'iSynera',
   founded: 'May 2025',
   founders: 'Chancellor Minus',
   hqLabel: 'Headquarters',
   hqAddressLine1: '447 Broadway, Suite 1110',
   hqAddressLine2: 'New York, NY 10013',
   phone: '646 867 3318',
-  email: 'info@ChanceTEK.com',
+  email: 'info@iSynera.com',
   slogan: 'Strategic Decisions Start Here.',
   subSlogan: 'Native AI. Agentic AI. AI-Enabled.',
   headline: 'Your AI & Media Solutions Partner for the Agentic Future',
-  description: 'ChanceTEK is building the next generation of AI-native enterprise platforms—designed from the ground up to think, act, and evolve alongside your business.',
+  description: 'iSynera is building the next generation of AI-native enterprise platforms—designed from the ground up to think, act, and evolve alongside your business.',
   mission: `Native AI. Agentic AI. AI-Enabled.
 Strategic Decisions Start Here.
 
-ChanceTEK is building the next generation of AI-native enterprise platforms—designed from the ground up to think, act, and evolve alongside your business.
+iSynera is building the next generation of AI-native enterprise platforms—designed from the ground up to think, act, and evolve alongside your business.
 
 We go beyond traditional software. Our systems are agentic, adaptive, and decision-aware—empowering organizations to operate with intelligence, speed, and autonomy at scale.
 
 Intelligent Systems. Real Outcomes.
 
-Through a unified ecosystem of custom AI agents, AI-native applications, and enterprise-grade AI SaaS platforms, ChanceTEK enables organizations to:
+Through a unified ecosystem of custom AI agents, AI-native applications, and enterprise-grade AI SaaS platforms, iSynera enables organizations to:
 
 - Automate complex, multi-step workflows
 - Augment high-stakes decision-making
@@ -673,7 +673,7 @@ Your AI runs where it performs best—without compromise.
 
 A Hybrid AI Advantage
 
-ChanceTEK combines proprietary AI architecture with the world’s most advanced models—blending frontier innovation with open flexibility.
+iSynera combines proprietary AI architecture with the world’s most advanced models—blending frontier innovation with open flexibility.
 
 Our hybrid approach enables:
 
@@ -687,7 +687,7 @@ The Future of Enterprise is Agentic
 
 We are entering a new era where software doesn’t just support decisions—it makes them, refines them, and acts on them.
 
-ChanceTEK delivers AI-native business platforms that:
+iSynera delivers AI-native business platforms that:
 
 - Autonomously execute complex processes
 - Collaborate with humans in real time
@@ -696,8 +696,8 @@ ChanceTEK delivers AI-native business platforms that:
 
 This is Native AI.
 This is Agentic Enterprise.
-This is ChanceTEK.`,
-  copyright: `© ${new Date().getFullYear()} ChanceTEK. All rights reserved.`,
+This is iSynera.`,
+  copyright: `© ${new Date().getFullYear()} iSynera. All rights reserved.`,
 };
 
 export const tickerPartners = [
@@ -783,7 +783,7 @@ export const featuredPlatforms: Platform[] = [
   {
     id: 'icareos',
     name: 'iCareOS',
-    description: "iCareOS by ChanceTEK is an AI-native clinical operating system that automates documentation, analyzes medical images, orchestrates patient intake, optimizes billing, monitors clinical risk, and coordinates care through a network of agentic AI modules.",
+    description: "iCareOS by iSynera is an AI-native clinical operating system that automates documentation, analyzes medical images, orchestrates patient intake, optimizes billing, monitors clinical risk, and coordinates care through a network of agentic AI modules.",
     href: 'https://iCareOS.tech',
     Icon: HeartPulse,
   },

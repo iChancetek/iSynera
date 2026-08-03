@@ -103,7 +103,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex h-20 items-center px-4 md:px-6">
         <div className="flex-1 flex items-center justify-start">
-          <Link href="/" aria-label="ChanceTEK Home" className="flex items-center gap-2">
+          <Link href="/" aria-label="iSynera Home" className="flex items-center gap-2">
             <Logo className="h-10 w-auto" />
              <span className="text-2xl font-bold text-foreground">{companyInfo.name}</span>
           </Link>
@@ -131,7 +131,7 @@ const Navbar = () => {
               <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6 flex flex-col">
                 <SheetHeader className="flex flex-row justify-between items-center mb-6">
                   <SheetTitle asChild>
-                    <Link href="/" aria-label="ChanceTEK Home Page" className="flex items-center gap-2">
+                    <Link href="/" aria-label="iSynera Home Page" className="flex items-center gap-2">
                       <Logo className="h-8 w-auto" />
                        <span className="text-xl font-bold text-foreground">{companyInfo.name}</span>
                     </Link>

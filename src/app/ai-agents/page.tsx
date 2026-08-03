@@ -20,17 +20,17 @@ import SocialWidget from '@/components/shared/SocialWidget';
 export const metadata: Metadata = {
   title: 'AI Agents',
   description: 'Deploy intelligent, action-taking AI agents that work like your best employee—solving problems, reducing handle time, and dramatically improving customer self-service.',
-  alternates: { canonical: 'https://www.ChanceTEK.com/ai-agents' },
+  alternates: { canonical: 'https://www.iSynera.com/ai-agents' },
   openGraph: {
-    title: 'AI Agents | ChanceTEK',
+    title: 'AI Agents | iSynera',
     description: 'Deploy intelligent, action-taking AI agents that work like your best employee—solving problems, reducing handle time, and dramatically improving customer self-service.',
-    url: 'https://www.ChanceTEK.com/ai-agents',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ChanceTEK AI Agents' }],
+    url: 'https://www.iSynera.com/ai-agents',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'iSynera AI Agents' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agents | ChanceTEK',
-    description: 'Deploy intelligent, action-taking AI agents with ChanceTEK.',
+    title: 'AI Agents | iSynera',
+    description: 'Deploy intelligent, action-taking AI agents with iSynera.',
     images: ['/og-image.png'],
   },
 };
@@ -85,13 +85,13 @@ export default function AiAgentsPage() {
     <>
       <Section className="bg-gradient-to-b from-background to-primary/5 pt-16 pb-24 text-center">
         <p className="text-2xl font-bold text-primary mb-4">
-            ✨ ChanceTEK — Enterprise AI That Works Like Your Best Employee
+            ✨ iSynera — Enterprise AI That Works Like Your Best Employee
         </p>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-foreground">
-          Better Customer Experiences. Built on ChanceTEK.
+          Better Customer Experiences. Built on iSynera.
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          ChanceTEK helps businesses deliver customer experiences that feel more human, more intelligent, and more effortless. Your ChanceTEK AI Agent doesn’t just answer questions—it takes action to solve problems, reduce handle time, and dramatically improve self-service resolution.
+          iSynera helps businesses deliver customer experiences that feel more human, more intelligent, and more effortless. Your iSynera AI Agent doesn’t just answer questions—it takes action to solve problems, reduce handle time, and dramatically improve self-service resolution.
         </p>
       </Section>
 
@@ -105,7 +105,7 @@ export default function AiAgentsPage() {
              </Suspense>
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-primary">💡 The ChanceTEK AI Agent</h2>
+            <h2 className="text-3xl font-bold text-primary">💡 The iSynera AI Agent</h2>
             <h3 className="text-2xl font-semibold text-foreground">Your Intelligent, Action-Taking Digital Workforce</h3>
             
             <div className="space-y-4 text-muted-foreground">
@@ -123,7 +123,7 @@ export default function AiAgentsPage() {
               
               <h4 className="text-lg font-semibold text-foreground">Instant, Intelligent Action</h4>
               <p>
-                Connect ChanceTEK to your systems of record—CRM, order management, billing, reservations, and more. Your agent can instantly:
+                Connect iSynera to your systems of record—CRM, order management, billing, reservations, and more. Your agent can instantly:
               </p>
               <ul className="space-y-2">
                 <FeatureListItem>Process exchanges</FeatureListItem>
@@ -136,7 +136,7 @@ export default function AiAgentsPage() {
 
               <h4 className="text-lg font-semibold text-foreground">Empowered Human Teams</h4>
               <p>
-                When issues require human attention, ChanceTEK gathers all essential details, summarizes the conversation, and hands it off cleanly—so your support team is fully informed and ready to jump in.
+                When issues require human attention, iSynera gathers all essential details, summarizes the conversation, and hands it off cleanly—so your support team is fully informed and ready to jump in.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function AiAgentsPage() {
               </div>
                <div className="space-y-2">
                   <h3 className="text-xl font-semibold text-foreground">Real-Time Support</h3>
-                  <p className="text-muted-foreground">Whether customers need to change an order, manage a subscription, or navigate multi-step processes, ChanceTEK handles it instantly.</p>
+                  <p className="text-muted-foreground">Whether customers need to change an order, manage a subscription, or navigate multi-step processes, iSynera handles it instantly.</p>
               </div>
                <div className="space-y-2">
                   <h3 className="text-xl font-semibold text-foreground">Adapts. Learns. Improves.</h3>
@@ -210,9 +210,9 @@ export default function AiAgentsPage() {
 
       <Section className="bg-primary/10">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary mb-4">🏢 ChanceTEK — Building the Future of Enterprise AI</h2>
+          <h2 className="text-3xl font-bold text-primary mb-4">🏢 iSynera — Building the Future of Enterprise AI</h2>
           <p className="text-muted-foreground mb-6">
-            ChanceTEK designs next-generation enterprise software powered by Generative AI and Agentic AI for organizations across every major industry. Our technology integrates the best of the GenAI ecosystem: Google Gemini, OpenAI, Anthropic, Llama, DeepSeek, Hugging Face, and leading open-source models.
+            iSynera designs next-generation enterprise software powered by Generative AI and Agentic AI for organizations across every major industry. Our technology integrates the best of the GenAI ecosystem: Google Gemini, OpenAI, Anthropic, Llama, DeepSeek, Hugging Face, and leading open-source models.
           </p>
           <p className="font-semibold text-foreground mb-4">We specialize in:</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-muted-foreground mb-8">
@@ -224,7 +224,7 @@ export default function AiAgentsPage() {
               <span>RAG & LLM Fine-Tuning</span>
           </div>
            <p className="text-lg text-foreground">
-            By combining advanced LLMs, RAG architectures, action-taking AI, and intelligent automation, ChanceTEK helps businesses scale, reduce costs, streamline operations, and unlock new levels of innovation.
+            By combining advanced LLMs, RAG architectures, action-taking AI, and intelligent automation, iSynera helps businesses scale, reduce costs, streamline operations, and unlock new levels of innovation.
           </p>
         </div>
       </Section>

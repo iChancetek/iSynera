@@ -43,7 +43,7 @@ export default function CynemoraPage() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-foreground">CyneMora</strong>, developed by ChanceTEK LLC, is an AI-native text-to-video cinematic platform that transforms ideas into fully produced, studio-quality videos in minutes.
+                <strong className="text-foreground">CyneMora</strong>, developed by iSynera LLC, is an AI-native text-to-video cinematic platform that transforms ideas into fully produced, studio-quality videos in minutes.
               </p>
               <p>
                 Turn scripts, images, presentations, PDFs, and creative concepts into polished visual storytelling instantly—without cameras, film crews, complex software, or advanced editing experience. CyneMora combines advanced AI, cinematic scene generation, intelligent voiceovers, motion design, and automated production workflows to streamline the entire video creation process from concept to final render.
@@ -63,7 +63,7 @@ export default function CynemoraPage() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-primary/30 hover:bg-primary/10 transition-all" asChild>
-                <a href="/Chancetek5.mp4" target="_blank" rel="noopener noreferrer">
+                <a href="/iSynera5.mp4" target="_blank" rel="noopener noreferrer">
                   Watch Demo <PlayCircle className="ml-2 w-5 h-5" />
                 </a>
               </Button>
@@ -111,7 +111,7 @@ export default function CynemoraPage() {
             {[
               { src: "/cynemora2.mp4", title: "CyneMora Vision" },
               { src: "/cynemora3.mp4", title: "Cinematic Generation" },
-              { src: "/Chancetek5.mp4", title: "ChanceTEK Intelligence" },
+              { src: "/iSynera5.mp4", title: "iSynera Intelligence" },
             ].map((media, i) => (
               <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="h-[400px] rounded-3xl overflow-hidden border border-border/30 bg-card relative group shadow-lg">

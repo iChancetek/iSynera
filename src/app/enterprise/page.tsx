@@ -37,18 +37,18 @@ import SocialWidget from '@/components/shared/SocialWidget';
 
 export const metadata: Metadata = {
   title: 'Enterprise Solutions',
-  description: "Discover ChanceTEK's enterprise-grade AI SaaS platforms powered by Agentic AI — built to accelerate innovation, boost productivity, and optimize operations.",
-  alternates: { canonical: 'https://www.ChanceTEK.com/enterprise' },
+  description: "Discover iSynera's enterprise-grade AI SaaS platforms powered by Agentic AI — built to accelerate innovation, boost productivity, and optimize operations.",
+  alternates: { canonical: 'https://www.iSynera.com/enterprise' },
   openGraph: {
-    title: 'Enterprise Solutions | ChanceTEK',
-    description: 'AI-native enterprise SaaS by ChanceTEK — iCareOS, StrideIQ, Famio & more. Built to accelerate innovation and optimize operations.',
-    url: 'https://www.ChanceTEK.com/enterprise',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ChanceTEK Enterprise Solutions' }],
+    title: 'Enterprise Solutions | iSynera',
+    description: 'AI-native enterprise SaaS by iSynera — iCareOS, StrideIQ, Famio & more. Built to accelerate innovation and optimize operations.',
+    url: 'https://www.iSynera.com/enterprise',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'iSynera Enterprise Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise Solutions | ChanceTEK',
-    description: 'AI-native enterprise SaaS platforms by ChanceTEK.',
+    title: 'Enterprise Solutions | iSynera',
+    description: 'AI-native enterprise SaaS platforms by iSynera.',
     images: ['/og-image.png'],
   },
 };
@@ -116,7 +116,7 @@ export default function EnterprisePage() {
           <span className="block text-foreground">Powered by Agentic AI</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          ChanceTEK builds intelligent, scalable, and secure SaaS platforms that accelerate innovation, boost
+          iSynera builds intelligent, scalable, and secure SaaS platforms that accelerate innovation, boost
           productivity, and optimize operations across industries.
         </p>
       </Section>
@@ -185,7 +185,7 @@ export default function EnterprisePage() {
               <PlatformCard
                 id="icareos"
                 title="iCareOS"
-                description="iCareOS by ChanceTEK is an AI-native clinical operating system that automates documentation, analyzes medical images, orchestrates patient intake, optimizes billing, monitors clinical risk, and coordinates care through a network of agentic AI modules—delivering smarter workflows, faster insights, and safer healthcare."
+                description="iCareOS by iSynera is an AI-native clinical operating system that automates documentation, analyzes medical images, orchestrates patient intake, optimizes billing, monitors clinical risk, and coordinates care through a network of agentic AI modules—delivering smarter workflows, faster insights, and safer healthcare."
                 href="https://iCareOS.tech"
                 Icon={HeartPulse}
               />

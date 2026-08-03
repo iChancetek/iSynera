@@ -1,12 +1,12 @@
 {
   "hero": {
-    "url": "https://picsum.photos/seed/ChanceTEK-hero/800/450",
-    "alt": "ChanceTEK AI Hero Robot",
+    "url": "https://picsum.photos/seed/iSynera-hero/800/450",
+    "alt": "iSynera AI Hero Robot",
     "hint": "futuristic AI robot sleek"
   },
   "agent": {
-    "url": "https://picsum.photos/seed/ChanceTEK-agent/800/450",
-    "alt": "ChanceTEK AI Agent Interface",
+    "url": "https://picsum.photos/seed/iSynera-agent/800/450",
+    "alt": "iSynera AI Agent Interface",
     "hint": "AI agent technology holographic"
   }
 }

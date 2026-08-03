@@ -4,7 +4,7 @@
       "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "User",
       "type": "object",
-      "description": "Represents a user of the ChanceTEK platform.",
+      "description": "Represents a user of the iSynera platform.",
       "properties": {
         "id": {
           "type": "string",
@@ -61,7 +61,7 @@
       "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Lead",
       "type": "object",
-      "description": "Represents a potential customer (lead) for ChanceTEK.",
+      "description": "Represents a potential customer (lead) for iSynera.",
       "properties": {
         "id": {
           "type": "string",
@@ -166,7 +166,7 @@
         }
       }
     ],
-    "reasoning": "The Firestore structure is designed to manage users and leads for the ChanceTEK platform. It emphasizes authorization independence and clear security rules.\n\nThe `/users/{userId}` collection stores user profiles.  The `/users/{userId}/leads/{leadId}` subcollection stores leads associated with each user. This structure leverages path-based ownership to simplify security rules and ensure that only the user who created a lead can access it.\n\n**Authorization Independence:** The structure ensures authorization independence by using path-based ownership for leads. Access to leads is determined solely by the `userId` in the path and does not require retrieving data from parent documents. This allows for atomic operations (transactions/batches) without the risk of broken security rules due to hierarchical dependencies.\n\n**QAPs (Rules are not Filters):** The structure enables secure `list` operations by segregating leads into user-owned subcollections (`/users/{userId}/leads/{leadId}`).  A user can only list leads within their own user document, making it easy to write security rules that prevent unauthorized access to other users' leads."
+    "reasoning": "The Firestore structure is designed to manage users and leads for the iSynera platform. It emphasizes authorization independence and clear security rules.\n\nThe `/users/{userId}` collection stores user profiles.  The `/users/{userId}/leads/{leadId}` subcollection stores leads associated with each user. This structure leverages path-based ownership to simplify security rules and ensure that only the user who created a lead can access it.\n\n**Authorization Independence:** The structure ensures authorization independence by using path-based ownership for leads. Access to leads is determined solely by the `userId` in the path and does not require retrieving data from parent documents. This allows for atomic operations (transactions/batches) without the risk of broken security rules due to hierarchical dependencies.\n\n**QAPs (Rules are not Filters):** The structure enables secure `list` operations by segregating leads into user-owned subcollections (`/users/{userId}/leads/{leadId}`).  A user can only list leads within their own user document, making it easy to write security rules that prevent unauthorized access to other users' leads."
   }
 }
     

@@ -56,7 +56,7 @@ export default function MissionFeatures() {
             Intelligent Systems. <span className="text-primary italic">Real Outcomes.</span>
           </motion.h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
-            Through a unified ecosystem of custom AI agents, AI-native applications, and enterprise-grade AI SaaS platforms, ChanceTEK enables organizations to operate with intelligence, speed, and autonomy at scale.
+            Through a unified ecosystem of custom AI agents, AI-native applications, and enterprise-grade AI SaaS platforms, iSynera enables organizations to operate with intelligence, speed, and autonomy at scale.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <OutcomeItem text="Automate complex workflows" />
@@ -175,7 +175,7 @@ export default function MissionFeatures() {
               <span className="hidden md:inline">•</span>
               <span>Agentic Enterprise</span>
               <span className="hidden md:inline">•</span>
-              <span>ChanceTEK</span>
+              <span>iSynera</span>
             </div>
           </motion.div>
         </div>

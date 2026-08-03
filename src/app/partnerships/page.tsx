@@ -9,18 +9,18 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Our Partners',
-  description: 'Learn about the official partners collaborating with ChanceTEK — including tBrexa Bio Inc. and StreamliningPM — to drive innovation in AI and technology.',
-  alternates: { canonical: 'https://www.ChanceTEK.com/partnerships' },
+  description: 'Learn about the official partners collaborating with iSynera — including tBrexa Bio Inc. and StreamliningPM — to drive innovation in AI and technology.',
+  alternates: { canonical: 'https://www.iSynera.com/partnerships' },
   openGraph: {
-    title: 'Our Partners | ChanceTEK',
-    description: 'ChanceTEK partners with forward-thinking organizations like tBrexa Bio Inc. and StreamliningPM to drive AI innovation across industries.',
-    url: 'https://www.ChanceTEK.com/partnerships',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ChanceTEK Partners' }],
+    title: 'Our Partners | iSynera',
+    description: 'iSynera partners with forward-thinking organizations like tBrexa Bio Inc. and StreamliningPM to drive AI innovation across industries.',
+    url: 'https://www.iSynera.com/partnerships',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'iSynera Partners' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Partners | ChanceTEK',
-    description: 'ChanceTEK partners with leading organizations to drive AI innovation.',
+    title: 'Our Partners | iSynera',
+    description: 'iSynera partners with leading organizations to drive AI innovation.',
     images: ['/og-image.png'],
   },
 };

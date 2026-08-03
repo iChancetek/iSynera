@@ -30,7 +30,7 @@ export default function BackgroundVideo() {
         playsInline
         className="w-full h-full object-cover opacity-50"
       >
-        <source src="/chancetek11.mp4" type="video/mp4" />
+        <source src="/isynera11.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

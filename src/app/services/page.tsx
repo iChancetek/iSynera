@@ -10,18 +10,18 @@ import { CarouselItem } from '@/components/ui/carousel';
 
 export const metadata: Metadata = {
   title: 'AI Services',
-  description: 'Explore the comprehensive suite of AI solutions offered by ChanceTEK, including Agentic AI, RAG Chatbots, Voice AI, LLM Fine-Tuning, and Workflow Automation—designed to scale your business.',
-  alternates: { canonical: 'https://www.ChanceTEK.com/services' },
+  description: 'Explore the comprehensive suite of AI solutions offered by iSynera, including Agentic AI, RAG Chatbots, Voice AI, LLM Fine-Tuning, and Workflow Automation—designed to scale your business.',
+  alternates: { canonical: 'https://www.iSynera.com/services' },
   openGraph: {
-    title: 'AI Services | ChanceTEK',
-    description: 'Explore the comprehensive suite of AI solutions offered by ChanceTEK, including Agentic AI, RAG Chatbots, Voice AI, LLM Fine-Tuning, and Workflow Automation.',
-    url: 'https://www.ChanceTEK.com/services',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ChanceTEK AI Services' }],
+    title: 'AI Services | iSynera',
+    description: 'Explore the comprehensive suite of AI solutions offered by iSynera, including Agentic AI, RAG Chatbots, Voice AI, LLM Fine-Tuning, and Workflow Automation.',
+    url: 'https://www.iSynera.com/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'iSynera AI Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Services | ChanceTEK',
-    description: 'Explore the comprehensive suite of AI solutions offered by ChanceTEK.',
+    title: 'AI Services | iSynera',
+    description: 'Explore the comprehensive suite of AI solutions offered by iSynera.',
     images: ['/og-image.png'],
   },
 };

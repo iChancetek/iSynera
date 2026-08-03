@@ -10,7 +10,7 @@ const path = require('path');
 const serviceAccount = require(path.join(__dirname, 'serviceAccountKey.json'));
 
 // --- USER TO BE MADE ADMIN ---
-const userEmail = 'chancellor@ichancetek.com';
+const userEmail = 'chancellor@iisynera.com';
 
 // Initialize the Firebase Admin SDK
 admin.initializeApp({

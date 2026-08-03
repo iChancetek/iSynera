@@ -75,7 +75,7 @@ export async function upsertUser(formData: UserFormData, idToken: string | undef
     if (isNewUser) {
         firestoreData.signUpDate = admin.firestore.FieldValue.serverTimestamp();
         // Automatically grant admin role to the specified user upon creation
-        if (userRecord.email === 'chancellor@ChanceTEK.com') {
+        if (userRecord.email === 'chancellor@iSynera.com') {
             await adminAuth.setCustomUserClaims(userRecord.uid, { admin: true });
             firestoreData.roles = ['admin']; // Ensure roles array is correct
             console.log(`Admin claims automatically set for ${userRecord.email}`);

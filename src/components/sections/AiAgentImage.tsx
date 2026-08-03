@@ -30,7 +30,7 @@ export default function AiAgentVisual() {
           playsInline
           className="w-full h-auto object-cover scale-[1.01] transition-transform duration-1000 group-hover:scale-105"
         >
-          <source src="/Chancetek_3.mp4" type="video/mp4" />
+          <source src="/iSynera_3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
