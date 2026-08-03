@@ -40,4 +40,4 @@ export const ai = new Proxy({} as Genkit, {
   }
 });
 
-export { gpt4o, gpt56Luna, tts1 };
+export { gpt4o, tts1 };
