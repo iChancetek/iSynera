@@ -197,6 +197,7 @@ export default function WebAndGraphicDesignPage() {
               { src: "/iSynera221.mp4", title: "iSynera 221", type: "video" },
               { src: "/iSynera0221.mp4", title: "iSynera 0221", type: "video" },
               { src: "/iSynera22221.mp4", title: "iSynera 22221", type: "video" },
+              { src: "/isynera221221.mp4", title: "iSynera 221221", type: "video" },
               { src: "/57th_Annual_Old_Timers_Reunion_202607161457.mp4", title: "57th Annual Old Timers Reunion", type: "video" },
               { src: "/iHailey.mp4", title: "iHailey", type: "video" },
               { src: "/famio221.mp4", title: "Famio 221", type: "video" },
