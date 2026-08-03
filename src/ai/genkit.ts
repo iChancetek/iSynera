@@ -19,7 +19,8 @@ const getAi = () => {
   return _ai;
 };
 
-// Model references for the new image models
+// Model references for OpenAI models
+export const gpt56Luna = modelRef('openai/gpt-5.6-luna' as any);
 export const gptImage1 = modelRef('openai/gpt-image-1' as any);
 export const gptImage1Mini = modelRef('openai/gpt-image-1-mini' as any);
 
@@ -39,4 +40,4 @@ export const ai = new Proxy({} as Genkit, {
   }
 });
 
-export { gpt4o, tts1 };
+export { gpt4o, gpt56Luna, tts1 };

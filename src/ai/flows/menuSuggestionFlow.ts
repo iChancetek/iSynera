@@ -6,7 +6,7 @@
  * - suggestionFlow - A function that returns a suggestion based on a prompt.
  */
 
-import { ai, gpt4o } from '@/ai/genkit';
+import { ai, gpt56Luna } from '@/ai/genkit';
 import { z } from 'zod';
 
 export const suggestionFlow = ai.defineFlow(
@@ -17,7 +17,7 @@ export const suggestionFlow = ai.defineFlow(
   },
   async (prompt) => {
     const response = await ai.generate({
-      model: gpt4o,
+      model: gpt56Luna,
       prompt: prompt,
     });
     return response.text;

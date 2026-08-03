@@ -10,8 +10,8 @@
  * - WebsiteQueryRAGOutput - The return type for the websiteQueryRAG function.
  */
 
-import {ai, gpt4o } from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai, gpt56Luna } from '@/ai/genkit';
+import { z } from 'genkit';
 import { companyInfo } from '@/lib/data'; // Import companyInfo
 import { adminDb } from '@/lib/firebase-admin';
 
@@ -35,7 +35,7 @@ const websiteQueryPrompt = ai.definePrompt({
   name: 'websiteQueryPrompt',
   input: {schema: WebsiteQueryRAGInputSchema},
   output: {schema: WebsiteQueryRAGOutputSchema},
-  model: gpt4o,
+  model: gpt56Luna,
   prompt: `You are an AI assistant for iSynera. Answer the following question about iSynera's services, its parent company iSynera, and related technologies using the context provided. When summarizing information, use bullet points (e.g., "- Point 1") for a professional and clear presentation. When a user asks where to find information, provide a direct link to the relevant page (e.g., /services, /about, /contact).
 
 IMPORTANT: You MUST format your final response as a JSON object that adheres to the provided output schema.

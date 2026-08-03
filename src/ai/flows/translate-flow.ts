@@ -6,7 +6,7 @@
  * Accepts source text and a target language, returns the translation.
  */
 
-import { ai, gpt4o } from '@/ai/genkit';
+import { ai, gpt56Luna } from '@/ai/genkit';
 import { z } from 'genkit';
 
 const TranslateInputSchema = z.object({
@@ -29,7 +29,7 @@ const translateFlow = ai.defineFlow(
   },
   async (input) => {
     const { text: responseText } = await ai.generate({
-      model: gpt4o,
+      model: gpt56Luna,
       prompt: `You are a professional translator. Translate the following text into ${input.targetLanguage}. 
 Return ONLY the translated text, nothing else. Do not add explanations or notes.
 
