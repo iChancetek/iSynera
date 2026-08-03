@@ -173,7 +173,7 @@ export default function RootLayout({
           <AutoThemeProvider>
             <FirebaseClientProvider>
               <ClientOnlyNavbar />
-              <main id="main-content" className="flex-grow container mx-auto px-4 md:px-6 py-8">
+              <main id="main-content" className="flex-grow w-full">
                 {children}
               </main>
               <Footer />

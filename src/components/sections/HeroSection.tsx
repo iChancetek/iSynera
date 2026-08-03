@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import { companyInfo } from '@/lib/data';
-import { ArrowRight, Sparkles, Zap, Brain, Cpu } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Brain, Cpu, Video, ShieldCheck, Activity } from 'lucide-react';
 import { Suspense, useState, useEffect, useRef, useCallback } from 'react';
 import { Skeleton } from '../ui/skeleton';
 import { motion, useMotionValue, useSpring, useTransform, Variants } from 'framer-motion';
@@ -16,7 +16,7 @@ interface HeroSectionProps {
 export default function HeroSection({ heroImage }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false);
 
-  // ── Cursor micro-parallax — ≤2% movement threshold ───────────────────────
+  // ── Cursor micro-parallax ────────────────────────────────────────────────
   const containerRef = useRef<HTMLDivElement>(null);
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
@@ -24,13 +24,11 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
   const springX = useSpring(rawX, springConfig);
   const springY = useSpring(rawY, springConfig);
 
-  // Primary line: ±0.4deg rotation (imperceptible max, scale ≤ 1.01)
-  const h1RotateX = useTransform(springY, [-1, 1], [0.4, -0.4]);
-  const h1RotateY = useTransform(springX, [-1, 1], [-0.5, 0.5]);
+  const h1RotateX = useTransform(springY, [-1, 1], [0.5, -0.5]);
+  const h1RotateY = useTransform(springX, [-1, 1], [-0.6, 0.6]);
 
-  // Subtitle: half the factor for depth separation
-  const subRotateX = useTransform(springY, [-1, 1], [0.2, -0.2]);
-  const subRotateY = useTransform(springX, [-1, 1], [-0.25, 0.25]);
+  const subRotateX = useTransform(springY, [-1, 1], [0.25, -0.25]);
+  const subRotateY = useTransform(springX, [-1, 1], [-0.3, 0.3]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const el = containerRef.current;
@@ -65,14 +63,14 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
         delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -84,55 +82,47 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
   };
 
   return (
-    <Section className="relative overflow-hidden bg-transparent py-20 md:py-32 lg:py-40">
-      {/* ── Mesh Gradient Background ───────────────────────────────────────────── */}
+    <Section className="relative overflow-hidden bg-transparent py-16 md:py-24 lg:py-32 w-full">
+      {/* ── Ambient Mesh Glow ───────────────────────────────────────────── */}
       <div className="absolute inset-0 bg-mesh-gradient pointer-events-none" />
       
-      {/* Primary glow orbs */}
-      <div className="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[700px] h-[700px] bg-accent/6 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500/4 rounded-full blur-[120px] pointer-events-none" />
+      {/* Laser-sharp Glow Orbs */}
+      <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/12 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 translate-x-1/2 translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/8 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Neural shimmer atmosphere */}
-      <div
-        className="absolute inset-0 pointer-events-none ai-neural-shimmer"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 40% at 30% 50%, hsla(217,100%,60%,0.04) 0%, transparent 70%), ' +
-            'radial-gradient(ellipse 40% 30% at 70% 40%, hsla(280,100%,65%,0.03) 0%, transparent 60%)',
-        }}
-      />
-
-      {/* Subtle grid overlay */}
+      {/* Cyber Grid Pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.015]"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
-          backgroundImage: 'linear-gradient(hsla(var(--foreground) / 1) 1px, transparent 1px), linear-gradient(90deg, hsla(var(--foreground) / 1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+          backgroundImage: 'linear-gradient(hsla(var(--primary) / 1) 1px, transparent 1px), linear-gradient(90deg, hsla(var(--primary) / 1) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
         }}
       />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Typography & CTAs */}
           <motion.div
             initial={mounted ? 'hidden' : 'visible'}
             animate="visible"
             variants={containerVariants}
-            className="text-center md:text-left space-y-8"
+            className="lg:col-span-7 text-center lg:text-left space-y-8"
           >
-            {/* Status Badges */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-primary text-xs font-bold tracking-widest uppercase">
-                <Sparkles size={14} className="animate-pulse-glow" />
-                {companyInfo.subSlogan}
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card text-accent text-xs font-bold tracking-wider uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                AI-Powered
+            {/* Live Agentic Telemetry Badge */}
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/30 text-primary text-xs font-mono font-bold tracking-widest uppercase shadow-[0_0_20px_-5px_hsla(var(--primary)/0.3)]">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <Sparkles size={14} className="text-accent animate-pulse" />
+                <span>NATIVE AI • AGENTIC WORKFORCE • GPT-5.6 LUNA</span>
               </div>
             </motion.div>
 
-            {/* ── AI Animated Text Layer ────────────────────────────────────────── */}
+            {/* Main Headline */}
             <div className="space-y-4" ref={containerRef}>
               <motion.h1
                 variants={itemVariants}
@@ -140,16 +130,16 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
                 style={{ perspective: '1200px' }}
               >
                 <motion.span
-                  className="block text-gradient-hero ai-glow-text ai-light-sweep cursor-default"
+                  className="block text-gradient-hero ai-glow-text ai-light-sweep cursor-default drop-shadow-[0_10px_35px_rgba(109,40,217,0.35)]"
                   style={{ rotateX: h1RotateX, rotateY: h1RotateY, transformStyle: 'preserve-3d' }}
-                  whileHover={{ scale: 1.008 }}
+                  whileHover={{ scale: 1.01 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 25 }}
                 >
                   {companyInfo.name}
                 </motion.span>
 
                 <motion.span
-                  className="block italic mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold opacity-90 tracking-tight ai-subtitle-text"
+                  className="block mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-purple-300 drop-shadow-md"
                   style={{ rotateX: subRotateX, rotateY: subRotateY, transformStyle: 'preserve-3d' }}
                 >
                   {companyInfo.headline}
@@ -157,50 +147,51 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
               </motion.h1>
             </div>
 
-            <motion.p variants={itemVariants} className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl leading-relaxed">
+            {/* Description */}
+            <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground font-normal max-w-2xl leading-relaxed mx-auto lg:mx-0">
               {companyInfo.description}
             </motion.p>
 
-            {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-              <Button size="lg" asChild className="h-14 px-8 text-lg font-bold bg-primary-gradient text-white shadow-xl shadow-primary/25 hover:shadow-primary/50 transition-all hover:-translate-y-1 animate-pulse-glow">
-                <Link href="/get-started">
-                  <Zap className="mr-2 h-5 w-5" /> Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg font-bold glass-card border-border/50 hover:border-primary/40 transition-all hover:bg-primary/5">
-                <Link href="/services">Explore Services</Link>
-              </Button>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-6 justify-center md:justify-start pt-2">
+            {/* Model & Spec Badges */}
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-2.5 justify-center lg:justify-start pt-1">
               {[
-                { icon: Brain, label: 'Agentic AI' },
-                { icon: Cpu, label: 'AI Media' },
-                { icon: Sparkles, label: 'GPT-5.6 Luna' },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-xs text-muted-foreground/70 font-medium uppercase tracking-wider">
-                  <Icon className="h-3.5 w-3.5 text-primary/60" />
+                { label: 'Whisper STT', icon: Activity },
+                { label: 'LangGraph Agents', icon: Brain },
+                { label: 'RAG Pipeline', icon: Zap },
+                { label: 'AI Media Studio', icon: Video },
+              ].map(({ label, icon: Icon }) => (
+                <div key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card/60 border border-primary/20 text-xs font-mono font-medium text-foreground/80 shadow-sm">
+                  <Icon className="w-3.5 h-3.5 text-accent" />
                   {label}
                 </div>
               ))}
             </motion.div>
+
+            {/* CTAs */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+              <Button size="lg" asChild className="h-14 px-8 text-lg font-bold bg-primary-gradient text-white shadow-xl shadow-primary/30 hover:shadow-primary/60 transition-all hover:-translate-y-1 animate-pulse-glow rounded-2xl">
+                <Link href="/get-started">
+                  <Zap className="mr-2 h-5 w-5 fill-current" /> Launch Agentic AI <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg font-bold glass-card border-primary/30 hover:border-primary/60 hover:bg-primary/10 transition-all rounded-2xl">
+                <Link href="/services">Explore Platforms & Services</Link>
+              </Button>
+            </motion.div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Right Column: Hero Visual HUD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-            className="flex justify-center items-center relative"
+            transition={{ duration: 1, delay: 0.3 }}
+            className="lg:col-span-5 flex justify-center items-center relative w-full"
           >
-            <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full scale-75 -z-10 animate-pulse" />
-            <div className="absolute inset-0 bg-accent/10 blur-[80px] rounded-full scale-50 -z-10 animate-float-subtle" />
             <Suspense fallback={<Skeleton className="w-full aspect-video rounded-3xl" />}>
               {heroImage}
             </Suspense>
           </motion.div>
+
         </div>
       </div>
     </Section>
