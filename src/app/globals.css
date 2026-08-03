@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; 
+    --foreground: 210 25% 15%; 
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 20% 40%;
+
+    --popover: 210 40% 99%;
+    --popover-foreground: 210 25% 15%;
+
+    --card: 210 40% 99%; 
+    --card-foreground: 210 25% 15%;
+
+    --border: 210 30% 85%;
+    --input: 210 30% 92%;
+
+    --primary: 215 100% 50%; /* Deep Blue */
+    --primary-foreground: 210 40% 98%; 
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 100% 40%;
+
+    --accent: 185 100% 45%; /* Vibrant Cyan */
+    --accent-foreground: 185 100% 20%; 
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 215 100% 50%; 
+    
+    --radius: 0.75rem;
+
+    --chart-1: 215 100% 50%;
+    --chart-2: 185 100% 45%;
+    --chart-3: 215 70% 80%;
+    --chart-4: 185 60% 90%;
+    --chart-5: 215 30% 80%;
+
+    /* Sidebar specific */
+    --sidebar-background: 210 30% 97%;
+    --sidebar-foreground: 210 25% 25%;
+    --sidebar-primary: 215 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 92%;
+    --sidebar-accent-foreground: 215 100% 50%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 215 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 4%; 
+    --foreground: 210 40% 98%; 
+
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222 47% 6%; 
+    --card-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+
+    --primary: 217 91% 60%; 
+    --primary-foreground: 222 47% 4%;
+
+    --secondary: 217 32% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 185 100% 50%; 
+    --accent-foreground: 222 47% 4%; 
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 217 91% 60%; 
+    
+    /* Sidebar specific (dark) */
+    --sidebar-background: 222 47% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 217 32% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply min-h-screen flex flex-col;
+  }
+  main {
+    @apply flex-grow;
+  }
+}
+
+@layer utilities {
+  .bg-primary-gradient {
+    background-image: radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  /* ─── AI HERO: Ambient Intelligence Glow ─────────────────────────────────── */
+  /* Breathes slowly — simulates continuous computation beneath the surface     */
+  .ai-glow-text {
+    animation: ai-glow-breathe 4s ease-in-out infinite;
+    will-change: text-shadow;
+  }
+
+  /* ─── AI HERO: Data Flow Light Sweep ─────────────────────────────────────── */
+  /* Directional shimmer passes across text every ~8s — GPU composited          */
+  .ai-light-sweep {
+    position: relative;
+    overflow: hidden;
+    /* Multi-layer soft depth shadow — creates Z-axis presence */
+    filter: drop-shadow(0 2px 12px hsla(var(--primary) / 0.15))
+            drop-shadow(0 4px 28px hsla(217 100% 60% / 0.08));
+    will-change: filter;
+  }
+
+  .ai-light-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Sweep beam — sharp center, soft fade edges */
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 35%,
+      hsla(185 100% 75% / 0.18) 48%,
+      hsla(217 100% 85% / 0.22) 50%,
+      hsla(185 100% 75% / 0.18) 52%,
+      transparent 65%,
+      transparent 100%
+    );
+    transform: translateX(-110%) skewX(-15deg);
+    animation: ai-sweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ─── AI HERO: Subtitle Intelligence Layer ────────────────────────────────── */
+  .ai-subtitle-text {
+    animation: ai-subtitle-glow 5s ease-in-out infinite;
+    will-change: text-shadow, opacity;
+  }
+
+  /* ─── AI HERO: Neural Shimmer (ultra-faint background intelligence) ─────── */
+  .ai-neural-shimmer {
+    animation: ai-neural 6s ease-in-out infinite alternate;
+    will-change: opacity;
+  }
+}
+
+/* ─── KEYFRAMES ──────────────────────────────────────────────────────────────── */
+
+/* Ambient glow — slow breath, cool spectrum (electric blue → violet → cyan) */
+@keyframes ai-glow-breathe {
+  0%, 100% {
+    text-shadow:
+      0 0  8px hsla(217 100% 65% / 0.20),
+      0 0 18px hsla(250 100% 70% / 0.12),
+      0 0 35px hsla(185 100% 60% / 0.06),
+      0 2px  6px hsla(217 100% 50% / 0.08);
+  }
+  33% {
+    text-shadow:
+      0 0 12px hsla(217 100% 65% / 0.35),
+      0 0 26px hsla(250 100% 70% / 0.22),
+      0 0 48px hsla(185 100% 60% / 0.14),
+      0 2px  8px hsla(217 100% 50% / 0.14);
+  }
+  66% {
+    text-shadow:
+      0 0 10px hsla(217 100% 65% / 0.28),
+      0 0 22px hsla(280 100% 72% / 0.18),
+      0 0 42px hsla(185 100% 60% / 0.10),
+      0 2px  6px hsla(217 100% 50% / 0.10);
+  }
+}
+
+/* Subtitle secondary glow — softer, slower phase offset */
+@keyframes ai-subtitle-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 6px hsla(217 100% 65% / 0.12),
+      0 0 14px hsla(185 100% 60% / 0.06);
+    opacity: 0.90;
+  }
+  50% {
+    text-shadow:
+      0 0 10px hsla(217 100% 65% / 0.24),
+      0 0 22px hsla(185 100% 60% / 0.12);
+    opacity: 0.96;
+  }
+}
+
+/* Data flow light sweep — moves once per cycle, pauses on the right */
+@keyframes ai-sweep {
+  0% {
+    transform: translateX(-110%) skewX(-15deg);
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  18% {
+    transform: translateX(110%) skewX(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(110%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+/* Neural shimmer — ambient intelligence field, barely perceptible */
+@keyframes ai-neural {
+  0% {
+    opacity: 0.3;
+    transform: scale(1.00) translateY(0px);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.005) translateY(-1px);
+  }
+  100% {
+    opacity: 0.40;
+    transform: scale(1.00) translateY(0px);
+  }
+}

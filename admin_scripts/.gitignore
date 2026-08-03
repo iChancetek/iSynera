@@ -1,0 +1,3 @@
+# Ignore the service account key and node modules
+serviceAccountKey.json
+node_modules

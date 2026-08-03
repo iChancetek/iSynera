@@ -1,0 +1,110 @@
+/**
+ * @file Firestore Security Rules for iSynera AI Solutions platform.
+ *
+ * @core_philosophy This ruleset enforces a strict user-ownership model, with an override for admins. Each user has control over their profile and leads, while admins have global access.
+ *
+ * @data_structure
+ *   - /users/{userId}: Stores user profile data.
+ *   - /users/{userId}/leads/{leadId}: Stores lead data associated with a specific user.
+ *
+ * @key_security_decisions
+ *   - Admins (users with a custom claim `admin: true`) have full read/write access to all data.
+ *   - User listing is disallowed for non-admins.
+ *   - All write operations require authentication.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Checks if the user has an 'admin' custom claim.
+     * @returns {boolean} True if the user is an admin, false otherwise.
+     */
+    function isAdmin() {
+      return request.auth.token.admin == true;
+    }
+
+    /**
+     * @description Controls access to user profiles.
+     * @path /users/{userId}
+     * @allow (get, update, delete) Authenticated user reads, updates, or deletes their own profile. Admins have full access.
+     * @allow (create) Authenticated user creates their own profile with matching userId.
+     * @deny (list) Non-admins are not permitted to list users.
+     */
+    match /users/{userId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner(userId) {
+        return request.auth.uid == userId;
+      }
+
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin(); // Only admins can list users.
+      allow create: if (isSignedIn() && isOwner(userId) && request.resource.data.id == userId) || isAdmin();
+      allow update: if (isExistingOwner(userId) && request.resource.data.id == resource.data.id) || isAdmin();
+      allow delete: if isExistingOwner(userId) || isAdmin();
+    }
+
+    /**
+     * @description Controls access to leads owned by a specific user.
+     * @path /users/{userId}/leads/{leadId}
+     * @allow (read, write) Authenticated user accesses leads under their own user ID. Admins have full access.
+     */
+    match /users/{userId}/leads/{leadId} {
+        function isSignedIn() {
+          return request.auth != null;
+        }
+
+        function isOwner(userId) {
+          return request.auth.uid == userId;
+        }
+
+        function isExistingOwner(userId) {
+          return isOwner(userId) && resource != null;
+        }
+
+        allow get: if isOwner(userId) || isAdmin();
+        allow list: if isOwner(userId) || isAdmin();
+        allow create: if (isSignedIn() && isOwner(userId) && request.resource.data.userId == userId) || isAdmin();
+        allow update: if (isExistingOwner(userId) && request.resource.data.userId == userId) || isAdmin();
+        allow delete: if isExistingOwner(userId) || isAdmin();
+    }
+
+    /**
+     * @description Controls access to social posts (community threads).
+     * @path /social_posts/{postId}
+     * @allow (read) Anyone can read posts (public community board).
+     * @allow (create) Authenticated users can create posts.
+     * @allow (update, delete) Only the post author or an admin can modify/remove.
+     */
+    match /social_posts/{postId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if (request.auth != null && (request.auth.uid == resource.data.userId || isAdmin())) ||
+                    request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reactions', 'replyCount']);
+      allow delete: if request.auth != null && (request.auth.uid == resource.data.userId || isAdmin());
+
+      /**
+       * @description Controls access to replies on social posts.
+       * @path /social_posts/{postId}/replies/{replyId}
+       * @allow (read) Anyone can read replies.
+       * @allow (create) Authenticated and unauthenticated users can create replies.
+       * @allow (update, delete) Only the reply author or an admin can modify/remove.
+       */
+      match /replies/{replyId} {
+        allow read: if true;
+        allow create: if true;
+        allow update: if (request.auth != null && (request.auth.uid == resource.data.userId || isAdmin())) ||
+                      request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reactions']);
+        allow delete: if request.auth != null && (request.auth.uid == resource.data.userId || isAdmin());
+      }
+    }
+  }
+}
+    

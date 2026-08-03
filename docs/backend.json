@@ -1,0 +1,172 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the ChanceTEK platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the user."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the user."
+        },
+        "signUpDate": {
+          "type": "string",
+          "description": "Date and time the user signed up.",
+          "format": "date-time"
+        },
+        "lastLogin": {
+          "type": "string",
+          "description": "Date and time of the user's last login.",
+          "format": "date-time"
+        },
+        "profilePictureUrl": {
+          "type": "string",
+          "description": "URL of the user's profile picture.",
+          "format": "uri"
+        },
+        "roles": {
+          "type": "array",
+          "description": "A list of roles assigned to the user.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "admin"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "firstName",
+        "lastName",
+        "signUpDate"
+      ]
+    },
+    "Lead": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Lead",
+      "type": "object",
+      "description": "Represents a potential customer (lead) for ChanceTEK.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Lead entity."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the lead."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the lead."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the lead.",
+          "format": "email"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the lead."
+        },
+        "companyName": {
+          "type": "string",
+          "description": "Company name of the lead."
+        },
+        "jobTitle": {
+          "type": "string",
+          "description": "Job title of the lead."
+        },
+        "leadSource": {
+          "type": "string",
+          "description": "Source from which the lead originated (e.g., website, referral)."
+        },
+        "dateCreated": {
+          "type": "string",
+          "description": "Date and time the lead was created.",
+          "format": "date-time"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Lead). The user that created the lead."
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "email",
+        "dateCreated"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "google.com"
+    ],
+    "customClaims": {
+      "admin": {
+        "type": "boolean",
+        "description": "Grants the user administrative privileges across the application."
+      }
+    }
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Authentication is handled by Firebase Auth; this collection stores additional user data. This collection utilizes path-based ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/leads/{leadId}",
+        "definition": {
+          "entityName": "Lead",
+          "schema": {
+            "$ref": "#/backend/entities/Lead"
+          },
+          "description": "Stores leads associated with each user. Uses path-based ownership for access control. Only the user with the matching {userId} can access leads in this subcollection.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user who owns the lead."
+            },
+            {
+              "name": "leadId",
+              "description": "The unique identifier for the lead."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to manage users and leads for the ChanceTEK platform. It emphasizes authorization independence and clear security rules.\n\nThe `/users/{userId}` collection stores user profiles.  The `/users/{userId}/leads/{leadId}` subcollection stores leads associated with each user. This structure leverages path-based ownership to simplify security rules and ensure that only the user who created a lead can access it.\n\n**Authorization Independence:** The structure ensures authorization independence by using path-based ownership for leads. Access to leads is determined solely by the `userId` in the path and does not require retrieving data from parent documents. This allows for atomic operations (transactions/batches) without the risk of broken security rules due to hierarchical dependencies.\n\n**QAPs (Rules are not Filters):** The structure enables secure `list` operations by segregating leads into user-owned subcollections (`/users/{userId}/leads/{leadId}`).  A user can only list leads within their own user document, making it easy to write security rules that prevent unauthorized access to other users' leads."
+  }
+}
+    
