@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { featuredPlatforms } from '@/lib/data';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink, Sparkles, Zap } from 'lucide-react';
 import Section from '@/components/shared/Section';
 import PageHeader from '@/components/shared/PageHeader';
 import { cn } from '@/lib/utils';
@@ -22,9 +22,10 @@ import SocialWidget from '@/components/shared/SocialWidget';
 export default function FeaturedPlatforms() {
   return (
     <Section className="relative overflow-hidden bg-background">
-      {/* Abstract Background Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none opacity-50" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/10 blur-[150px] rounded-full pointer-events-none opacity-30" />
+      {/* Ambient Background */}
+      <div className="absolute inset-0 bg-mesh-gradient pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary/8 blur-[140px] rounded-full pointer-events-none opacity-40" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/6 blur-[150px] rounded-full pointer-events-none opacity-25" />
       
       <div className="container relative z-10 mx-auto px-4">
         <PageHeader
@@ -51,27 +52,34 @@ export default function FeaturedPlatforms() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={cn(
-                "group relative flex flex-col h-full overflow-hidden rounded-2xl border transition-all duration-500",
+                "group relative flex flex-col h-full overflow-hidden rounded-2xl transition-all duration-500",
                 platform.isPremium 
-                  ? "bg-primary/5 border-primary/30 hover:border-primary/60 shadow-[0_0_50px_-12px_rgba(var(--primary),0.2)]" 
-                  : "bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 shadow-lg hover:shadow-primary/10"
+                  ? "glass-card border-primary/30 hover:border-primary/60 shadow-[0_0_60px_-12px_hsla(var(--primary)/0.2)]" 
+                  : "glass-card glass-card-hover border-border/30"
               )}
             >
+              {/* Premium gradient overlay */}
               {platform.isPremium && (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-100 transition-opacity duration-500" />
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/5 opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full pointer-events-none" />
+                </>
               )}
               
               <CardHeader className="relative z-10 p-8">
                 <div className="flex items-center justify-between mb-6">
                   <div className={cn(
-                    "p-3 w-fit rounded-xl border transition-transform duration-500 group-hover:scale-110",
-                    platform.isPremium ? "bg-primary/20 border-primary/30 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-primary/10 border-primary/20"
+                    "p-3 w-fit rounded-xl border transition-all duration-500 group-hover:scale-110",
+                    platform.isPremium 
+                      ? "bg-primary/15 border-primary/30 shadow-[0_0_25px_-5px_hsla(var(--primary)/0.35)] group-hover:shadow-[0_0_35px_-5px_hsla(var(--primary)/0.5)]" 
+                      : "bg-primary/10 border-primary/20 group-hover:shadow-[0_0_20px_-5px_hsla(var(--primary)/0.25)]"
                   )}>
                     <platform.Icon className={cn("w-8 h-8", platform.isPremium ? "text-primary" : "text-primary/80")} />
                   </div>
                   {platform.isPremium && (
-                    <div className="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-xs font-bold tracking-widest uppercase">
-                      Premium Elite
+                    <div className="px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-xs font-bold tracking-widest uppercase flex items-center gap-1.5 animate-pulse-glow">
+                      <Sparkles className="h-3 w-3 text-primary" />
+                      <span className="text-gradient">Premium</span>
                     </div>
                   )}
                 </div>
@@ -94,12 +102,13 @@ export default function FeaturedPlatforms() {
                   className={cn(
                     "w-full transition-all duration-300 rounded-xl h-14 text-lg font-bold",
                     platform.isPremium 
-                      ? "bg-primary text-primary-foreground hover:shadow-[0_0_30px_rgba(var(--primary),0.5)]" 
-                      : ""
+                      ? "bg-primary-gradient text-white shadow-lg shadow-primary/25 hover:shadow-primary/50 hover:-translate-y-0.5" 
+                      : "border-border/40 hover:border-primary/40 hover:bg-primary/5"
                   )}
                   variant={platform.isPremium ? "default" : "outline"}
                 >
                   <a href={platform.href} target="_blank" rel="noopener noreferrer">
+                    {platform.isPremium && <Zap className="mr-2 h-5 w-5" />}
                     {platform.id === 'isydney' ? 'Experience iSydney' : `Experience ${platform.name}`} <ExternalLink className="w-5 h-5 ml-2" />
                   </a>
                 </Button>

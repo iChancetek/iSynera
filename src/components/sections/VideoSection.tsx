@@ -3,7 +3,7 @@
 
 import Section from '@/components/shared/Section';
 import { useEffect, useRef, useState } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, Play } from 'lucide-react';
 
 interface VideoSectionProps {
   videoSrc: string;
@@ -58,9 +58,14 @@ export default function VideoSection({ videoSrc }: VideoSectionProps) {
   };
 
   return (
-    <Section className="py-8 md:py-12" disablePadding>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-black">
+    <Section className="py-8 md:py-12 relative overflow-hidden" disablePadding>
+      {/* Ambient glow behind video */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-3/4 h-3/4 bg-primary/5 blur-[100px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="video-glass-frame relative w-full aspect-video bg-black">
           {mounted ? (
             <video
               ref={videoRef}
@@ -77,17 +82,21 @@ export default function VideoSection({ videoSrc }: VideoSectionProps) {
               Your browser does not support the video tag.
             </video>
           ) : (
-            <div className="w-full h-full bg-black/50 animate-pulse" />
+            <div className="w-full h-full bg-card/50 animate-pulse flex items-center justify-center">
+              <Play className="w-16 h-16 text-primary/20" />
+            </div>
           )}
-          {/* Overlay for aesthetic consistency */}
-          <div className="absolute inset-0 bg-primary/5 pointer-events-none mix-blend-overlay" />
+          
+          {/* Cinematic letterbox overlays */}
+          <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/30 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10" />
           
           {/* Mute Toggle Button */}
           {mounted && (
             <div className="absolute bottom-4 right-4 z-20">
               <button
                 onClick={toggleMute}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 border border-white/20 text-white hover:bg-black/60 backdrop-blur-md transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-full glass-card text-white hover:bg-white/15 transition-all duration-300 border-white/20"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
                 {isMuted ? (
@@ -97,11 +106,21 @@ export default function VideoSection({ videoSrc }: VideoSectionProps) {
                   </>
                 ) : (
                   <>
-                    <Volume2 className="w-4 h-4 animate-pulse-slow" />
+                    <Volume2 className="w-4 h-4 animate-pulse" />
                     <span className="text-xs font-bold uppercase tracking-wider hidden sm:inline">Sound On</span>
                   </>
                 )}
               </button>
+            </div>
+          )}
+
+          {/* AI Media Badge */}
+          {mounted && (
+            <div className="absolute top-4 left-4 z-20">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full glass-card text-white/80 text-xs font-bold tracking-wider uppercase border-white/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
+                AI Media
+              </div>
             </div>
           )}
         </div>

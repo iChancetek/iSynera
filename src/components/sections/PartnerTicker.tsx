@@ -13,32 +13,37 @@ export default function PartnerTicker() {
   const allPartners = [...tickerPartners, ...tickerPartners];
 
   return (
-    <Section className="bg-muted/30">
-      <PageHeader
-        title="Trusted by Leading Companies & Partners"
-        description=""
-      />
-      <div
-        className={cn(
-          "relative w-full overflow-hidden",
-          // Add a fade-out effect on the edges for a smoother appearance
-          "before:absolute before:left-0 before:top-0 before:h-full before:w-16 before:bg-gradient-to-r before:from-muted/30 before:to-transparent before:z-10",
-          "after:absolute after:right-0 after:top-0 after:h-full after:w-16 after:bg-gradient-to-l after:from-muted/30 after:to-transparent after:z-10"
-        )}
-      >
-        <div className="flex w-max motion-safe:animate-marquee">
-          {allPartners.map((partner, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 mx-8 py-2 text-2xl font-semibold text-muted-foreground whitespace-nowrap transition-colors duration-300 hover:text-primary"
-            >
-              {partner}
-            </div>
-          ))}
+    <Section className="relative overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-1/2 h-32 bg-primary/5 blur-[80px] rounded-full" />
+      </div>
+
+      <div className="relative z-10">
+        <PageHeader
+          title="Trusted by Leading Companies & Partners"
+          description=""
+        />
+        <div
+          className={cn(
+            "relative w-full overflow-hidden",
+            // Fade-out edges with background color matching
+            "before:absolute before:left-0 before:top-0 before:h-full before:w-24 before:bg-gradient-to-r before:from-background before:to-transparent before:z-10",
+            "after:absolute after:right-0 after:top-0 after:h-full after:w-24 after:bg-gradient-to-l after:from-background after:to-transparent after:z-10"
+          )}
+        >
+          <div className="flex w-max motion-safe:animate-marquee">
+            {allPartners.map((partner, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 mx-8 py-3 text-2xl font-bold text-muted-foreground/50 whitespace-nowrap transition-all duration-300 hover:text-primary hover:scale-105 cursor-default"
+              >
+                {partner}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
   );
 }
-
-    
