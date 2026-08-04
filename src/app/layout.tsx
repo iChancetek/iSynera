@@ -121,10 +121,10 @@ const jsonLd = {
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '447 Broadway, Suite 1110',
-    addressLocality: 'New York',
-    addressRegion: 'NY',
-    postalCode: '10013',
+    streetAddress: '2440 Texas Parkway, Suite 3811',
+    addressLocality: 'Missouri City',
+    addressRegion: 'TX',
+    postalCode: '77489',
     addressCountry: 'US',
   },
   contactPoint: {
