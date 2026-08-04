@@ -131,7 +131,7 @@ const jsonLd = {
     '@type': 'ContactPoint',
     telephone: '+1-646-867-3318',
     contactType: 'customer service',
-    email: 'info@iSynera.com',
+    email: 'info@iSynera.us',
     areaServed: 'US',
     availableLanguage: 'English',
   },

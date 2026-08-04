@@ -7,7 +7,7 @@ import { Mail, Phone, Building } from 'lucide-react';
 import ContactForm from '@/components/shared/ContactForm';
 
 export default function ContactPageClient() {
-  const hqAddress = `${companyInfo.hqAddressLine1}, ${companyInfo.hqAddressLine2}`;
+  const hqAddress = `${companyInfo.hqAddressLine1}, ${companyInfo.hqAddressLine2}, ${companyInfo.hqAddressLine3}`;
   const encodedHqAddress = encodeURIComponent(hqAddress);
   const hqMapSrc = `https://maps.google.com/maps?q=${encodedHqAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
@@ -27,6 +27,7 @@ export default function ContactPageClient() {
                   <h3 className="font-semibold">{companyInfo.hqLabel || 'Headquarters'}</h3>
                   <p className="text-muted-foreground">{companyInfo.hqAddressLine1}</p>
                   <p className="text-muted-foreground">{companyInfo.hqAddressLine2}</p>
+                  <p className="text-muted-foreground">{companyInfo.hqAddressLine3}</p>
                 </div>
               </div>
               

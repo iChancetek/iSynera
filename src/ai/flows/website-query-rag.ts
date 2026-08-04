@@ -46,7 +46,7 @@ Context:
 - Sub-Slogan: ${companyInfo.subSlogan}
 - Mission: ${companyInfo.mission}
 - Founded: ${companyInfo.founded} by ${companyInfo.founders}
-- Address: ${companyInfo.hqAddressLine1}, ${companyInfo.hqAddressLine2}
+- Address: ${companyInfo.hqAddressLine1}, ${companyInfo.hqAddressLine2}, ${companyInfo.hqAddressLine3}
 - Contact: Phone: ${companyInfo.phone}, Email: ${companyInfo.email}
 
 - Available Pages:

@@ -94,6 +94,7 @@ const Footer = () => {
                 <p className="font-semibold text-foreground text-xs uppercase tracking-wider">{companyInfo.hqLabel || 'Headquarters'}</p>
                 <p className="mt-1">{companyInfo.hqAddressLine1}</p>
                 <p>{companyInfo.hqAddressLine2}</p>
+                <p>{companyInfo.hqAddressLine3}</p>
               </div>
               <div className="space-y-1">
                 <p>Phone: <a href={`tel:${companyInfo.phone}`} className="hover:text-primary transition-colors">{companyInfo.phone}</a></p>
